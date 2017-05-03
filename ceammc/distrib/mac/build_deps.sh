@@ -8,10 +8,18 @@ fi
 
 PKG=$1
 CWD=`pwd`
+OSX_MINOR_VER=`sw_vers -productVersion | cut -d. -f2`
 
 PREFIX=/opt/local/universal
 export PKG_CONFIG_PATH="${PREFIX}/lib/pkgconfig"
-export CFLAGS='-arch x86_64 -arch i386 -O2'
+
+if [ $OSX_MINOR_VER -lt 8 ]; then
+    export CFLAGS='-arch i386 -O2'
+else
+    export CFLAGS='-arch x86_64 -arch i386 -O2'
+fi
+
+echo "CFLAGS: ${CFLAGS}"
 
 function banner() {
     echo "*****************************************************"
