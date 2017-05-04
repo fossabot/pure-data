@@ -232,7 +232,7 @@ function install_tcl() {
     banner "Downloading ${pkg}"
     if [ ! -f "tcl-release.zip" ]
     then
-        wget "https://github.com/tcltk/tcl/archive/core_8_6_6.zip" -O "tcl-release.zip"
+        curl "https://github.com/tcltk/tcl/archive/core_8_6_6.zip" -o "tcl-release.zip"
     fi
 
     unzip -o  "tcl-release.zip"
