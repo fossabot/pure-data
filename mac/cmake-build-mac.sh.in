@@ -106,10 +106,20 @@ do
     $DYLIBBUNDLER -x $PD_EXTRA/ceammc/$(basename $f) -b -cd -d $PD_EXTRA/ceammc -p @loader_path/ -of
 done
 
+function dylib_external_fix() {
+    exec=$1
+    dir=$2
+
+    $DYLIBBUNDLER -x "$exec" -b -cd -d "$dir" -p @loader_path/ -of
+}
+
 echo "Copying Additional extra:"
 cp $BUILD_DIR/ceammc/extra/comport/system.serial.d_fat $PD_EXTRA/ceammc
 cp $BUILD_DIR/ceammc/extra/hcs/*.d_fat $PD_EXTRA/ceammc
 cp $SRC_DIR/ceammc/extra/hcs/*.tcl $PD_EXTRA/ceammc
+dylib_external_fix $PD_EXTRA/ceammc/system.serial.d_fat $PD_EXTRA/ceammc
+dylib_external_fix $PD_EXTRA/ceammc/system.cursor.d_fat $PD_EXTRA/ceammc
+dylib_external_fix $PD_EXTRA/ceammc/system.colorpanel.d_fat $PD_EXTRA/ceammc
 
 echo "Copying zconf..."
 mkdir -p $PD_EXTRA/zconf
@@ -174,20 +184,22 @@ echo "Copying SoundTouch external..."
 mkdir $PD_EXTRA/soundtouch
 cp $BUILD_DIR/ceammc/extra/SoundTouch/pd/*.d_fat $PD_EXTRA/soundtouch
 cp $SRC_DIR/ceammc/extra/SoundTouch/pd/*-help.pd $PD_EXTRA/soundtouch
+dylib_external_fix $PD_EXTRA/soundtouch/soundtouch~.d_fat $PD_EXTRA/soundtouch
 
 echo "Copying autotune external..."
 mkdir $PD_EXTRA/autotune
 cp $BUILD_DIR/ceammc/extra/autotune/*.d_fat $PD_EXTRA/autotune
 cp $SRC_DIR/ceammc/extra/autotune/*-help.pd $PD_EXTRA/autotune
 
-echo "Copying disis_munger external..."
-mkdir $PD_EXTRA/disis_munger
-cp $BUILD_DIR/ceammc/extra/flext/disis_munger/*.d_fat $PD_EXTRA/disis_munger
-cp $SRC_DIR/ceammc/extra/flext/disis_munger/*-help.pd $PD_EXTRA/disis_munger
+echo "Copying disis_munger~ external..."
+mkdir $PD_EXTRA/disis_munger~
+cp $BUILD_DIR/ceammc/extra/flext/disis_munger/*.d_fat $PD_EXTRA/disis_munger~
+cp $SRC_DIR/ceammc/extra/flext/disis_munger/*-help.pd $PD_EXTRA/disis_munger~
 
 echo "Copying CEAMMC help files:"
 cp $SRC_DIR/ceammc/ext/doc/*-help.pd $PD_EXTRA/ceammc
 cp $SRC_DIR/ceammc/ext/doc/*.mod $PD_EXTRA/ceammc
+cp $SRC_DIR/ceammc/ext/doc/*.txt $PD_EXTRA/ceammc
 # handle index file
 rm $PD_EXTRA/ceammc/index-help.pd
 chmod 0444 $PD_EXTRA/ceammc/*-help.pd
@@ -221,6 +233,8 @@ mkdir -p Frameworks
 mkdir -p $LIBDIR
 
 $DYLIBBUNDLER -x $EXECFILE -b -cd -d $LIBDIR -p $NEWLIBPATH -of
+$DYLIBBUNDLER -x "Resources/bin/pdsend" -b -cd -d $LIBDIR -p $NEWLIBPATH -of
+$DYLIBBUNDLER -x "Resources/bin/pdreceive" -b -cd -d $LIBDIR -p $NEWLIBPATH -of
 
 #copy Tcl${TK_VERSION}
 if [ $IS_SYSTEM_TK -eq 0 ]
