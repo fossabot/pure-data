@@ -47,13 +47,13 @@ function install_libmodplug() {
     rm -rf libmodplug*
 
     banner "Downloading ${pkg}"
-    wget https://codeload.github.com/Konstanty/libmodplug/zip/master -O libmodplug.zip
+    curl https://codeload.github.com/Konstanty/libmodplug/zip/master -o libmodplug.zip
     unzip -o libmodplug.zip
     cd libmodplug-*
 
     banner "Configure ${pkg}"
     autoreconf -fi
-    export CXXFLAGS='-arch x86_64 -arch i386 -O2'
+    export CXXFLAGS="$CFLAGS"
     ./configure --enable-static=no \
         --enable-shared=yes \
         --prefix=${PREFIX}
