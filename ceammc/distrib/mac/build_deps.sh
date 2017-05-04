@@ -77,6 +77,11 @@ function install_sndfile() {
     cd libsndfile*
 
     banner "Configure ${pkg}"
+
+    if [ $OSX_OLD ]; then
+        export CC=/usr/local/bin/gcc-5
+    fi
+
     CFLAGS="${CFLAGS} -I${PREFIX}/include" ./configure --enable-static=yes \
         --enable-shared=yes \
         --prefix=${PREFIX}
