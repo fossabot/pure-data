@@ -112,6 +112,12 @@ if(WIN32)
         install(PROGRAMS ${VORBISENCDLL_PATH} DESTINATION ${PD_EXE_INSTALL_PATH})
     endif()
 
+    # install libmodplug-1.dll
+    find_file(MODPLUGDLL_PATH NAMES libmodplug-1.dll PATHS ${WISH_BINDIR})
+    if(MODPLUGDLL_PATH)
+        install(PROGRAMS ${MODPLUGDLL_PATH} DESTINATION ${PD_EXE_INSTALL_PATH})
+    endif()
+
     # mingw runtime libs
     get_filename_component(_MINGW_PATH ${CMAKE_CXX_COMPILER} PATH)
     set(_MINGW_BIN ${_MINGW_PATH}/../i686-w64-mingw32/bin)
