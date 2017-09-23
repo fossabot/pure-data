@@ -114,6 +114,11 @@ UI_fun(ui_knob)::wx_paint(ui_knob* zx, t_object* view)
 
         // adjust knob
         float line_width = int(rect.height / 20) + 1;
+
+#ifdef __WIN32
+        line_width *= 0.5;
+#endif
+
         if (rect.height < 30) {
             radius_scale = 0.55f;
         }
