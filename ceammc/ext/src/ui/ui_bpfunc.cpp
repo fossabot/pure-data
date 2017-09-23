@@ -887,7 +887,11 @@ UI_fun(ui_bpfunc)::new_ext(ui_bpfunc* zx, t_symbol* s, int argcl, t_atom* argv)
     zx->txt_min = etext_layout_create();
     zx->txt_val = etext_layout_create();
 
+#ifndef __WIN32
     zx->txt_font = efont_create(gensym("Helvetica"), gensym("light"), gensym("normal"), 8);
+#else
+    zx->txt_font = efont_create(gensym("Verdana"), gensym("light"), gensym("normal"), 6);
+#endif
 }
 
 UI_fun(ui_bpfunc)::free_ext(ui_bpfunc* zx)
