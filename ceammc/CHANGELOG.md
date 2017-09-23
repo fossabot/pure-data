@@ -1,6 +1,6 @@
 # CEAMMC external library changelog
 
-## [Unreleased]
+## [0.4]
 ### Fixed:
 - function - bang handling fixed
 - list.choice - fixed hang on empty list
