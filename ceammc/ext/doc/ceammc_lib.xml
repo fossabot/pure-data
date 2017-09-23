@@ -814,7 +814,7 @@
     </entry>
   </category>
   <category name="system">
-    <entry descr="S" name="system.cursor" ref_view="object">
+    <entry descr="Get information about cursor motion, mousewheel and buttonclick" name="system.cursor" ref_view="object">
       <xi:include href="system.cursor.pddoc" parse="xml"/>
     </entry>
     <entry descr="Get system environment variables" name="system.getenv" ref_view="object">
@@ -892,7 +892,7 @@
     </entry>
   </category>
   <meta>
-    <version>0.3</version>
+    <version>0.4</version>
     <authors>
       <author>Alex Nadzharov</author>
       <author>Hans-Christoph Steiner</author>
