@@ -214,6 +214,7 @@ function install_fftw3() {
         --enable-sse2 \
         --enable-avx \
         --enable-avx2 \
+        --with-our-malloc \
         --enable-shared=yes \
         --enable-static=no
 
