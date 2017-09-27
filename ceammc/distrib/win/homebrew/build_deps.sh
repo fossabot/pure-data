@@ -339,6 +339,46 @@ function install_tk() {
     make install
 }
 
+function install_runtime() {
+    pkg="MSVC runtime"
+    cd "${CWD}"
+
+    banner "${pkg}"
+    mkdir -p msvcrt
+    cd msvcrt
+
+    if [ ! -f "vcredist_x86.exe" ]
+    then
+        wget https://download.microsoft.com/download/5/B/C/5BC5DBB3-652D-4DCE-B14A-475AB85EEF6E/vcredist_x86.exe
+    fi
+
+    cabextract -d vcredist "vcredist_x86.exe"
+    cabextract "vcredist/vc_red.cab"
+    cp "F_CENTRAL_msvcr100_x86" ${PREFIX}/bin/msvcr100.dll
+}
+
+function install_fonts() {
+    pkg="DejaVu fonts"
+    cd "${CWD}"
+
+    banner "${pkg}"
+    mkdir -p fonts
+    cd fonts
+
+    if [ ! -f "dejavu-fonts-ttf-2.37.zip" ]
+    then
+        wget https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/dejavu-fonts-ttf-2.37.zip
+    fi
+
+    unzip -o "dejavu-fonts-ttf-2.37.zip"
+    cd dejavu-fonts-ttf*
+
+    mkdir -p "${PREFIX}/pd/fonts"
+    cp ttf/DejaVuSansMono.ttf "${PREFIX}/pd/fonts"
+    cp ttf/DejaVuSans.ttf "${PREFIX}/pd/fonts"
+    cp LICENSE "${PREFIX}/pd/fonts"
+}
+
 case ${PKG} in
     all)
         install_libmodplug
@@ -352,6 +392,8 @@ case ${PKG} in
         install_flac
         install_sndfile
         install_portaudio
+        install_fonts
+        instal_runtime
         ;;
     modplug)
         install_libmodplug
@@ -386,8 +428,15 @@ case ${PKG} in
     portaudio)
         install_portaudio
         ;;
+    runtime)
+        install_runtime
+        ;;
+    fonts)
+        install_fonts
+        ;;
     *)
-        echo "Choose from following: modplug, fftw3, tcl, tk, ogg, vorbis, flac or all"
+        echo "Choose from following: modplug, fftw3, tcl, tcllib, tk, tklib, ogg, \
+              vorbis, flac, portaudio or all"
         exit 1
         ;;
 esac

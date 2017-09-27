@@ -23,11 +23,20 @@ AR=${HOST}-ar
 mkdir -p pd
 cd pd
 #rm -rf *
+
+export ProgramW6432="${HOME}/.wine/drive_c/Program Files/"
+export PROGRAMFILES="${HOME}/.wine/drive_c/Program Files/"
+export DNSSD_ROOT="${HOME}/.wine/drive_c/Program\ Files/Bonjour SDK"
+
 cmake -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_PREFIX_PATH=${PREFIX} \
     -DBOOST_ROOT=/usr/local/include \
     -DLEAPMOTION_ROOT=/Users/serj/work/misc/LeapSDK_win/LeapSDK \
     -DCMAKE_TOOLCHAIN_FILE=../Toolchain-mingw32.cmake \
+    -DWITH_DUMMY_AUDIO=OFF \
+    -DWITH_DUMMY_MIDI=OFF \
+    -DWITH_PORTAUDIO=ON \
+    -DWITH_MMIO=OFF \
     -DCMAKE_INSTALL_PREFIX=${PREFIX}/pd \
     ${PD_DIR}
 

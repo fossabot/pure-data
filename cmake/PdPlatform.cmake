@@ -70,7 +70,7 @@ if(WIN32)
     install(DIRECTORY "${WISH_BINDIR}/../lib/tk8.6" DESTINATION "${PD_LIBTCL_INSTALL_PATH}")
     install(DIRECTORY "${WISH_BINDIR}/../lib/dde1.4" DESTINATION "${PD_LIBTCL_INSTALL_PATH}")
     install(DIRECTORY "${WISH_BINDIR}/../lib/tcllib1.18" DESTINATION "${PD_LIBTCL_INSTALL_PATH}")
-    #install(DIRECTORY "${WISH_BINDIR}/../lib/tklib0.5" DESTINATION "${PD_LIBTCL_INSTALL_PATH}")
+    install(DIRECTORY "${WISH_BINDIR}/../lib/tooltip" DESTINATION "${PD_LIBTCL_INSTALL_PATH}")
     install(DIRECTORY "${WISH_BINDIR}/../lib/reg1.3" DESTINATION "${PD_LIBTCL_INSTALL_PATH}")
     
     # pthreadGC-3.dll
@@ -155,6 +155,16 @@ if(WIN32)
     if(LIBWINPTHREAD)
         message(STATUS "MinGW runtime: ${LIBWINPTHREAD} found")
         list(APPEND CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS ${LIBWINPTHREAD})
+    endif()
+
+    # msvcr100.dll
+    find_file(MSVCR100
+        NAME msvcr100.dll
+        PATHS ${CMAKE_INSTALL_PREFIX}/bin)
+
+    if(MSVCR100)
+        message(STATUS "MinGW runtime: ${MSVCR100} found")
+        list(APPEND CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS ${MSVCR100})
     endif()
 
     include(InstallRequiredSystemLibraries)
