@@ -41,10 +41,12 @@ function install_libmodplug() {
     rm -rf libmodplug*
 
     banner "Downloading ${pkg}"
-    brew unpack libmodplug
-    cd libmodplug*
+    wget https://codeload.github.com/Konstanty/libmodplug/zip/master -O libmodplug.zip
+    unzip -o libmodplug.zip
+    cd libmodplug-*
 
     banner "Configure ${pkg}"
+    autoreconf -fi
     ./configure --host=${HOST} \
     	--enable-static=yes \
     	--enable-shared=yes \
@@ -110,7 +112,7 @@ function install_portaudio() {
     cd "${CWD}"
 
     banner "${pkg}"
-    #rm -rf portaudio*
+    rm -rf portaudio*
 
     banner "Downloading ${pkg}"
 
@@ -119,13 +121,16 @@ function install_portaudio() {
         curl -O http://www.steinberg.net/sdk_downloads/asiosdk2.3.zip
     fi
 
-    #brew unpack portaudio
-    #unzip -o "asiosdk2.3.zip"
+    brew unpack portaudio
+    unzip -o "asiosdk2.3.zip"
 
-    #mkdir -p ${PREFIX}/lib/asiosdk2
-    #cp -R ASIOSDK2.3 ${PREFIX}/lib/asiosdk2
+    mkdir -p ${PREFIX}/lib/asiosdk2
+    cp -R ASIOSDK2.3 ${PREFIX}/lib/asiosdk2
 
     cd portaudio*
+    perl -pi -e "s|-luuid||g" configure.in
+    autoreconf -fi
+
     #make clean
     export CFLAGS="$CFLAGS -I./src/hostapi/wasapi/mingw-include"
     ./configure --host=${HOST} \
@@ -285,7 +290,7 @@ function install_tklib() {
     banner "Downloading ${pkg}"
     if [ ! -f "tklib.zip" ]
     then
-        wget "https://core.tcl.tk/tklib/zip/tklib-0.6.zip?uuid=tklib-0-6" -O "tklib.zip"
+        wget "https://codeload.github.com/tcltk/tklib/zip/master" -O "tklib.zip"
     fi
 
     unzip "tklib.zip"
@@ -300,7 +305,6 @@ function install_tklib() {
     perl -pi -e "s|${FROM}|${TCLSH}|g" Makefile
 
     banner "Installing ${pkg}"
-    ${TCLSH} tklib-*/installer.tcl
     make install
 }
 
@@ -335,6 +339,19 @@ function install_tk() {
 }
 
 case ${PKG} in
+    all)
+        install_libmodplug
+        install_fftw3
+        install_tcl
+        install_tcllib
+        install_tk
+        install_tklib
+        install_ogg
+        install_vorbis
+        install_flac
+        install_sndfile
+        install_portaudio
+        ;;
     modplug)
         install_libmodplug
         ;;
@@ -363,9 +380,6 @@ case ${PKG} in
         install_flac
         ;;
     sndfile)
-        install_ogg
-        install_vorbis
-        istall_flag
         install_sndfile
         ;;
     portaudio)

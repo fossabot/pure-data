@@ -1,6 +1,12 @@
 #!/bin/bash
 
-PKG=$1
+if [ $# -ne 1 ]
+then
+    echo "Usage $(basename $0) PATH_TO_PD..."
+    exit 1
+fi
+
+PD_DIR=$1
 CWD=`pwd`
 
 PREFIX="/opt/local/mingw32"
@@ -23,7 +29,7 @@ cmake -DCMAKE_BUILD_TYPE=Release \
     -DLEAPMOTION_ROOT=/Users/serj/work/misc/LeapSDK_win/LeapSDK \
     -DCMAKE_TOOLCHAIN_FILE=../Toolchain-mingw32.cmake \
     -DCMAKE_INSTALL_PREFIX=${PREFIX}/pd \
-    ../../../music/pure-data/
+    ${PD_DIR}
 
 make -j3
 make install
