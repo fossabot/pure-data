@@ -1,10 +1,5 @@
-if(WIN32 OR MSYS)
-    add_subdirectory(win)
-endif()
-
-if(APPLE)
-    add_subdirectory(mac)
-endif()
+add_subdirectory(win)
+add_subdirectory(mac)
 
 set(MAKELIB_SCRIPT "")
 set(MAKELIB_COMPAT_SCRIPT "")
