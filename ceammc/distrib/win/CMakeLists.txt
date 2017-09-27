@@ -18,3 +18,5 @@ if(ISCC_PATH)
         COMMAND ${ISCC_PATH} "${CMAKE_BINARY_DIR}/pd.iss"
     )
 endif()
+
+add_subdirectory(homebrew)

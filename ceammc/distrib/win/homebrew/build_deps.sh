@@ -363,6 +363,9 @@ case ${PKG} in
         install_flac
         ;;
     sndfile)
+        install_ogg
+        install_vorbis
+        istall_flag
         install_sndfile
         ;;
     portaudio)
