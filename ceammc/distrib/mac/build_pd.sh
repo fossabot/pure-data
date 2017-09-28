@@ -1,10 +1,11 @@
 #!/bin/bash
 
-PREFIX="$BUILD_DIR"
-if [ -z "$PREFIX" ]
-then
-    PREFIX=`pwd`/build/pd
-fi
+PREFIX=/opt/local/universal
+PD_SRC_DIR=$1/..
+
+#rm -rf pd
+mkdir -p pd
+cd pd
 
 echo "Building PureData..."
 echo ""
@@ -26,27 +27,26 @@ then
         CXX_COMPILER="-DCMAKE_CXX_COMPILER=/usr/local/bin/g++-$ver"
 fi
 
-mkdir -p ${PREFIX}
-cd ${PREFIX}
-PD_SRC_DIR="${PREFIX}/../.."
+
 DEPS_ROOT="${PREFIX}/../deps"
 
-export PKG_CONFIG_LIBDIR="${DEPS_ROOT}/lib/pkgconfig"
+export PKG_CONFIG_PATH="${PREFIX}/lib/pkgconfig"
 cmake -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_C_FLAGS='-O2' \
     -DCMAKE_CXX_FLAGS='-O2' \
     -DARCH='x86_64;i386' \
+    -DLEAPMOTION_ROOT="${HOME}/work/misc/LeapMotionSDK/LeapSDK" \
     ${C_COMPILER} \
     ${CXX_COMPILER} \
-    -DFFTW_ROOT="${DEPS_ROOT}/" \
-    -DLIBSNDFILE_ROOT="${DEPS_ROOT}" \
-    -DPORTAUDIO_ROOT="${DEPS_ROOT}" \
+    -DLIBSNDFILE_ROOT="${PREFIX}" \
+    -DPORTAUDIO_ROOT="${PREFIX}" \
     ${PD_SRC_DIR}
 
 cmake ${PD_SRC_DIR}
 
-make
+make -j3
 make test
+rm -rf dist
 make app
 make dmg
 make ceammc_lib
