@@ -21,6 +21,14 @@ function banner() {
     echo "*****************************************************"
 }
 
+function err() {
+    echo "*****************************************************"
+    tput setaf 1
+    echo Error: $1
+    tput sgr0
+    echo "*****************************************************"
+}
+
 function install_libmodplug() {
     pkg="libmodplug"
     cd "${CWD}"
@@ -193,23 +201,29 @@ function install_fftw3() {
 
 function install_tcl() {
     export CFLAGS='-O2 -arch x86_64'
+    export BUILD_STYLE='Release'
+    export CONFIGURE_ARGS='--disable-symbols'
     pkg="TCL"
     cd "${CWD}"
 
     banner "${pkg}"
-    rm -rf tcl-release
+    rm -rf build/*
+    rm -rf tcl-core*
 
     banner "Downloading ${pkg}"
     if [ ! -f "tcl-release.zip" ]
     then
-        wget "https://github.com/tcltk/tcl/archive/release.zip" -O "tcl-release.zip"
+        wget "https://github.com/tcltk/tcl/archive/core_8_6_6.zip" -O "tcl-release.zip"
     fi
 
-    unzip "tcl-release.zip"
-    cd tcl-release/macosx
+    unzip -o  "tcl-release.zip"
+    cd tcl-core*/unix
 
     banner "Build ${pkg}"
-    make -f GNUMakefile
+    #autoconf
+    ./configure --prefix="/usr/local" --bindir="/usr/local/bin" --libdir="/Library/Frameworks" \
+        --mandir="/usr/local/man" --enable-threads --enable-framework
+    make
 
     banner "Installing ${pkg}"
     sudo make install
@@ -274,20 +288,27 @@ function install_tk() {
     cd "${CWD}"
 
     banner "${pkg}"
-    rm -rf tk-release
+    rm -rf build/*
+    rm -rf tk-core*
 
     banner "Downloading ${pkg}"
     if [ ! -f "tk-release.zip" ]
     then
-        wget "https://github.com/tcltk/tk/archive/release.zip" -O tk-release.zip
+        wget "https://github.com/tcltk/tk/archive/core_8_6_6.zip" -O tk-release.zip
     fi
 
-    unzip "tk-release.zip"
-    cd tk-release/macosx
+    unzip -o  "tk-release.zip"
+    cd tk-core*/unix
 
     banner "Configure ${pkg}"
+    ./configure --prefix="/usr/local" --bindir="/usr/local/bin" --libdir="/Library/Frameworks" \
+    --mandir="/usr/local/man" --enable-threads --enable-framework \
+    --with-tcl="/Library/Frameworks/Tcl.framework" \
+    --enable-symbols --enable-aqua
+
+
     banner "Build ${pkg}"
-    make -f GNUMakefile
+    make
 
     banner "Installing ${pkg}"
     sudo make install
