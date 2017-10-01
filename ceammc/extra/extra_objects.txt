@@ -1,5 +1,5 @@
 autotune/autotune~
-disis_munger/disis_munger~
+disis_munger~
 fftease/bthresher~
 fftease/burrow~
 fftease/cavoc27~
