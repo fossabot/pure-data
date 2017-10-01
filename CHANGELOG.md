@@ -153,4 +153,4 @@
     http://www.surina.net/soundtouch/
 
 - **disis_munger** a realtime multichannel granulator. [declare -lib disis_munger] 
-    * [disismunger~]
+    * [disis_munger~]
