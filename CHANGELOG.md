@@ -20,3 +20,4 @@
 - **libdir** library
 - **LyonPotpourri** collection of externals
 - [soundtouch/soundtouch~]
+- [disis_munger~]
