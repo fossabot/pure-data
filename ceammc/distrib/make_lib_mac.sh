@@ -69,6 +69,22 @@ do
     ${DYLIBBUNDLER} -x ${OUTDIR}/$ext_name -b -d ${OUTDIR} -p @loader_path/ -of
 done
 
+echo "Copying [system.serial] extension files to ${OUTDIR} ..."
+find "${BINDIR}/../extra/comport" -name *.d_fat -print0 | while read -r -d '' file
+do
+    ext_name=$(basename $file)
+    skip_ext $file
+    if [ $? -eq 1 ]
+    then
+        echo "- Skip: '$ext_name'"
+        continue
+    fi
+
+    cp "$file" "${OUTDIR}/${ext_name}"
+    echo "+ Copy: '$ext_name'"
+    ${DYLIBBUNDLER} -x ${OUTDIR}/$ext_name -b -d ${OUTDIR} -p @loader_path/ -of
+done
+
 ceammc_lib=$(find "${BINDIR}" -name ceammc\\.d_fat)
 cp $ceammc_lib "${OUTDIR}"
 ${DYLIBBUNDLER} -x ${OUTDIR}/ceammc.d_fat -b -d ${OUTDIR} -p @loader_path/ -of
