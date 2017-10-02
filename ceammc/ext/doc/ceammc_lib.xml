@@ -864,6 +864,9 @@
     <entry descr="Dropdown menu" name="ui.menu" ref_view="link">
       <xi:include href="ui.menu.pddoc" parse="xml"/>
     </entry>
+    <entry descr="counterpart of the vanilla [nbx] for signal" name="ui.number~" ref_view="link">
+      <xi:include href="ui.number~.pddoc" parse="xml"/>
+    </entry>
     <entry descr="Scope GUI object" name="ui.scope~" ref_view="link">
       <xi:include href="ui.scope~.pddoc" parse="xml"/>
     </entry>

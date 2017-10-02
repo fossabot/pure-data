@@ -265,6 +265,7 @@ set(DOC_FILES
     ui.knob
     ui.matrix
     ui.menu
+    ui.number~
     ui.scope~
     ui.slider2d
     ui.sliders
