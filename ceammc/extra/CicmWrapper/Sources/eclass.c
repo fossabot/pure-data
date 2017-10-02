@@ -76,19 +76,19 @@ void tcl_version_init() {
 
 t_eclass* eclass_new(const char *name, t_typ_method newm, t_typ_method freem, size_t size, int flags, t_atomtype arg1, int arg2)
 {
-    char help[MAXPDSTRING];
     t_class *pd  = class_new(gensym(name), (t_newmethod)newm, (t_method)freem, size, flags, arg1, arg2);
-    t_eclass* c  = (t_eclass *)resizebytes(pd, sizeof(*pd), sizeof(*c));
+//    t_eclass* c  = (t_eclass *)resizebytes(pd, sizeof(c->c_class) + sizeof(c->c_padding), sizeof(*c));
+    t_eclass* c = (t_eclass*) realloc(pd, sizeof(t_eclass));
     if(c)
     {
         tcl_version_init();
         epd_init();
+        c->c_attr  = 0;
+        memset(&c->c_widget, 0, sizeof(t_ewidget));
         c->c_nattr = 0;
         c->c_dsp   = 0;
         c->c_box   = 0;
         c->c_attr  = NULL;
-//        sprintf(help, "%s-help", c->c_class.c_name->s_name);
-//        class_sethelpsymbol((t_class *)c, gensym(help));
     }
     else
     {

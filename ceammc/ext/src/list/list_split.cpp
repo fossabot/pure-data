@@ -94,8 +94,9 @@ extern "C" void setup_list0x2esplit()
     
     eclass_addmethod(list_split_class, (method)list_split_l1, "in1", A_GIMME, 0);
     eclass_addmethod(list_split_class, (method)list_split_l2, "in2", A_GIMME, 0);
+
+
+
     
     eclass_register(CLASS_OBJ, list_split_class);
-    
-    
 }
