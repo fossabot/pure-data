@@ -39,6 +39,7 @@
 - midi.event2ctl added
 - window help added
 - local.list help added
+- ui.menu help added
 - symbol.num_compare help added
 - preset.float added
 - preset.symbol added

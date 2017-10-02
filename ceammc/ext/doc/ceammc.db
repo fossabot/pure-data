@@ -188,7 +188,6 @@ math.tan		.		.
 math.tanh		.		.
 math.trunc		.		.
 midi.ctl2str,midi.ctl->str		.		.
-midi.ctr2str,midi.ctr->str		.		.
 midi.event2ctl,midi.ev->ctl		.		..
 midi.event2note,midi.ev->note		.		...
 midi.event2prg,midi.ev->prg		.		.
@@ -264,6 +263,7 @@ ui.display		.		-
 ui.keyboard		.		.
 ui.knob		.		.
 ui.matrix		.		.
+ui.menu		.		.
 ui.scope~		.		-
 ui.slider2d		.		.
 ui.sliders		.		.

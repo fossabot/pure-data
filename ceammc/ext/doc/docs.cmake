@@ -264,6 +264,7 @@ set(DOC_FILES
     ui.keyboard
     ui.knob
     ui.matrix
+    ui.menu
     ui.scope~
     ui.slider2d
     ui.sliders
