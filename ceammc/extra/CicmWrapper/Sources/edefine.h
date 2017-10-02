@@ -520,7 +520,10 @@ typedef struct t_eattr
 typedef struct t_eclass
 {
     t_class     c_class;    /*!< The default class. */
-    char        c_padding[64];
+    // do not remove!
+    // in Pd 0.48 t_class* next added into t_class, and sizeof(t_class) grown to 8 bytes on x86_64
+    // this padding added to prevent field rewriting values
+    char        c_padding[8];
     char        c_box;      /*!< The marker if the class is GUI. */
     char        c_dsp;      /*!< The marker if the class is DSP. */
     t_ewidget   c_widget;   /*!< The extra widget methods. */
