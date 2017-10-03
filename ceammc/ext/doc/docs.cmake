@@ -271,6 +271,7 @@ set(DOC_FILES
     ui.slider2d
     ui.sliders
     ui.radio
+    ui.rslider
     ui.spectroscope~
     ui.toggle
     ui.meter~

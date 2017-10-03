@@ -45,6 +45,7 @@
 - ui.meter~ help added
 - ui.slider help added
 - ui.radio help added
+- ui.rslider help added
 - symbol.num_compare help added
 - preset.float added
 - preset.symbol added

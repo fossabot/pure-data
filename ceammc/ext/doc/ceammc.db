@@ -267,6 +267,7 @@ ui.menu		.		.
 ui.meter~		~		.
 ui.number~		~		~.
 ui.radio		.		.
+ui.rslider		..		.
 ui.scope~		.		-
 ui.slider		.		.
 ui.slider2d		.		.

@@ -873,6 +873,9 @@
     <entry descr="counterpart of the vanilla radio toggle" name="ui.radio" ref_view="link">
       <xi:include href="ui.radio.pddoc" parse="xml"/>
     </entry>
+    <entry descr="rangle slider" name="ui.rslider" ref_view="link">
+      <xi:include href="ui.rslider.pddoc" parse="xml"/>
+    </entry>
     <entry descr="Scope GUI object" name="ui.scope~" ref_view="link">
       <xi:include href="ui.scope~.pddoc" parse="xml"/>
     </entry>
