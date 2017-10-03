@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pure\\ Data 0.47.1_ceammc\n"
 "Report-Msgid-Bugs-To: pd-dev@iem.at\n"
-"POT-Creation-Date: 2017-04-28 04:33+0300\n"
+"POT-Creation-Date: 2017-10-03 15:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -103,50 +103,69 @@ msgstr ""
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:102
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:112
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:120
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:123
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:126
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:131
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:138
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:147
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:156
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:166
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:174
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:180
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:279
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:280
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:294
 msgid "Basic"
 msgstr ""
 
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:70
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:124
 msgid "Patching Size"
 msgstr ""
 
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:78
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:132
 msgid "Pinned"
 msgstr ""
 
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:85
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:139
 msgid "Font Name"
 msgstr ""
 
-#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:90 ../tcl/pdwindow.tcl:366
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:90
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:144 ../tcl/pdwindow.tcl:366
 msgid "normal"
 msgstr ""
 
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:94
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:148
 msgid "Font Weight"
 msgstr ""
 
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:103
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:157
 msgid "Font Slant"
 msgstr ""
 
-#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:113 ../tcl/dialog_font.tcl:121
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:113
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:167 ../tcl/dialog_font.tcl:121
 msgid "Font Size"
 msgstr ""
 
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:121
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:175
 msgid "Receive Symbol"
 msgstr ""
 
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:127
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:181
 msgid "Send Symbol"
 msgstr ""
 
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:280
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:281
+#: ../ceammc/extra/CicmWrapper/Sources/eclass.c:295
 msgid "Preset Name"
 msgstr ""
 
@@ -168,6 +187,7 @@ msgstr ""
 #: ../ceammc/extra/CreamLibrary/Sources/c.dsp_tilde.cpp:199
 #: ../ceammc/extra/CreamLibrary/Sources/c.matrix.cpp:362
 #: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:553
+#: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:559
 #: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:560
 #: ../ceammc/extra/CreamLibrary/Sources/c.radio.cpp:427
 #: ../ceammc/extra/CreamLibrary/Sources/c.tab.cpp:578
@@ -181,6 +201,7 @@ msgstr ""
 #: ../ceammc/extra/CreamLibrary/Sources/c.number.cpp:432
 #: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:527
 #: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:530
+#: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:533
 #: ../ceammc/extra/CreamLibrary/Sources/c.radio.cpp:415
 #: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:418
 #: ../ceammc/extra/CreamLibrary/Sources/c.slider.cpp:332
@@ -228,17 +249,44 @@ msgstr ""
 #: ../ceammc/extra/CreamLibrary/Sources/c.menu.cpp:138
 #: ../ceammc/extra/CreamLibrary/Sources/c.number.cpp:444
 #: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:535
+#: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:541
 #: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:542
 #: ../ceammc/extra/CreamLibrary/Sources/c.tab.cpp:566
 msgid "Text Color"
 msgstr ""
 
+#: ../ceammc/extra/CreamLibrary/Sources/c.meter_tilde.cpp:255
+msgid "Refresh interval (ms)"
+msgstr ""
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.meter_tilde.cpp:265
+msgid "Cold signal color"
+msgstr ""
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.meter_tilde.cpp:271
+msgid "Tepid signal color"
+msgstr ""
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.meter_tilde.cpp:277
+msgid "Warm signal color"
+msgstr ""
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.meter_tilde.cpp:283
+msgid "Hot signal color"
+msgstr ""
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.meter_tilde.cpp:289
+msgid "Overload signal color"
+msgstr ""
+
 #: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:541
+#: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:547
 #: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:548
 msgid "Empty Button Color"
 msgstr ""
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:547
+#: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:553
 #: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:554
 msgid "Stored Button Color"
 msgstr ""
