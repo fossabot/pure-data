@@ -233,7 +233,7 @@ extern "C" void setup_ui0x2enumber_tilde(void)
     
     CLASS_ATTR_LONG                 (c, "interval", 0, t_number_tilde, f_interval);
     CLASS_ATTR_ORDER                (c, "interval", 0, "2");
-    CLASS_ATTR_LABEL                (c, "interval", 0, "Refresh Interval in Milliseconds");
+    CLASS_ATTR_LABEL                (c, "interval", 0, _("Refresh interval (ms)"));
     CLASS_ATTR_FILTER_MIN           (c, "interval", 20);
     CLASS_ATTR_DEFAULT              (c, "interval", 0, "50");
     CLASS_ATTR_SAVE                 (c, "interval", 1);
@@ -241,7 +241,7 @@ extern "C" void setup_ui0x2enumber_tilde(void)
     
     CLASS_ATTR_LONG                 (c, "decimal", 0, t_number_tilde, f_max_decimal);
     CLASS_ATTR_ORDER                (c, "decimal", 0, "3");
-    CLASS_ATTR_LABEL                (c, "decimal", 0, "Number of decimal");
+    CLASS_ATTR_LABEL                (c, "decimal", 0, _("Number of decimal"));
     CLASS_ATTR_DEFAULT              (c, "decimal", 0, "6");
     CLASS_ATTR_FILTER_MIN           (c, "decimal", 0);
     CLASS_ATTR_FILTER_MAX           (c, "decimal", 6);

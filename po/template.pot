@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pure\\ Data 0.47.1_ceammc\n"
 "Report-Msgid-Bugs-To: pd-dev@iem.at\n"
-"POT-Creation-Date: 2017-10-03 15:19+0300\n"
+"POT-Creation-Date: 2017-10-03 15:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -256,6 +256,7 @@ msgid "Text Color"
 msgstr ""
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.meter_tilde.cpp:255
+#: ../ceammc/extra/CreamLibrary/Sources/c.number_tilde.cpp:236
 msgid "Refresh interval (ms)"
 msgstr ""
 
@@ -277,6 +278,10 @@ msgstr ""
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.meter_tilde.cpp:289
 msgid "Overload signal color"
+msgstr ""
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.number_tilde.cpp:244
+msgid "Number of decimal"
 msgstr ""
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:541

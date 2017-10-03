@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pure\\ Data 0.47.1_ceammc\n"
 "Report-Msgid-Bugs-To: pd-dev@iem.at\n"
-"POT-Creation-Date: 2017-10-03 15:19+0300\n"
+"POT-Creation-Date: 2017-10-03 15:22+0300\n"
 "PO-Revision-Date: 2017-03-02 22:22+0300\n"
 "Last-Translator: Serge Poltavski <serge.poltavski@gmail.com>\n"
 "Language-Team: Russian\n"
@@ -860,6 +860,11 @@ msgstr "Число"
 msgid "Number of Items"
 msgstr "Число элементов"
 
+#: ../ceammc/extra/CreamLibrary/Sources/c.number_tilde.cpp:244
+#, fuzzy
+msgid "Number of decimal"
+msgstr "Число элементов"
+
 #: ../tcl/dialog_iemgui.tcl:528 ../tcl/pd_menus.tcl:227 ../tcl/pd_menus.tcl:230
 #: ../tcl/pd_menus.tcl:241
 msgid "Number2"
@@ -1088,6 +1093,7 @@ msgid "Redo typing"
 msgstr "Повторить ввод"
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.meter_tilde.cpp:255
+#: ../ceammc/extra/CreamLibrary/Sources/c.number_tilde.cpp:236
 msgid "Refresh interval (ms)"
 msgstr ""
 
