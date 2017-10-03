@@ -41,6 +41,7 @@
 - local.list help added
 - ui.menu help added
 - ui.number~ help added
+- ui.meter~ help added
 - symbol.num_compare help added
 - preset.float added
 - preset.symbol added
