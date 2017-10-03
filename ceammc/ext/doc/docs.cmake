@@ -267,6 +267,7 @@ set(DOC_FILES
     ui.menu
     ui.number~
     ui.scope~
+    ui.slider
     ui.slider2d
     ui.sliders
     ui.spectroscope~

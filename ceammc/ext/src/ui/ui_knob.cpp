@@ -19,6 +19,13 @@ static T clip(T min, T max, T v)
     return std::max(min, std::min(max, v));
 }
 
+static t_symbol* SYM_PLUS = gensym("+");
+static t_symbol* SYM_MINUS = gensym("-");
+static t_symbol* SYM_MUL = gensym("*");
+static t_symbol* SYM_DIV = gensym("/");
+static t_symbol* SYM_INC = gensym("++");
+static t_symbol* SYM_DEC = gensym("--");
+
 struct ui_knob : public ceammc_gui::BaseGuiObject {
     t_outlet* out1;
 
@@ -244,13 +251,13 @@ static void knob_modify(ui_knob* z, t_symbol* s, int argc, t_atom* argv)
         return;
     }
 
-    if (s == gensym("+")) {
+    if (s == SYM_PLUS) {
         knob_set(z, z->realValue() + atom_getfloat(argv));
-    } else if (s == gensym("-")) {
+    } else if (s == SYM_MINUS) {
         knob_set(z, z->realValue() - atom_getfloat(argv));
-    } else if (s == gensym("*")) {
+    } else if (s == SYM_MUL) {
         knob_set(z, z->realValue() * atom_getfloat(argv));
-    } else if (s == gensym("/")) {
+    } else if (s == SYM_DIV) {
         t_float v = atom_getfloat(argv);
         if (v == 0.f) {
             pd_error(z, "[%s] division by zero attempt.", eobj_getclassname(z)->s_name);

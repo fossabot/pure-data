@@ -873,6 +873,9 @@
     <entry descr="Scope GUI object" name="ui.scope~" ref_view="link">
       <xi:include href="ui.scope~.pddoc" parse="xml"/>
     </entry>
+    <entry descr="counterpart of the vanilla slider" name="ui.slider" ref_view="link">
+      <xi:include href="ui.slider.pddoc" parse="xml"/>
+    </entry>
     <entry descr="2D slider widget" name="ui.slider2d" ref_view="link">
       <xi:include href="ui.slider2d.pddoc" parse="xml"/>
     </entry>

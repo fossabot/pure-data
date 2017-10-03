@@ -29,16 +29,18 @@ level;
 #X text 175 373 counterpart of the vanilla [nbx] for signal;
 #X obj 30 399 ui.link @title [ui.scope~] @url ui.scope~-help.pd;
 #X text 175 396 Scope GUI object;
-#X obj 30 422 ui.link @title [ui.slider2d] @url ui.slider2d-help.pd;
-#X text 175 419 2D slider widget;
-#X obj 30 445 ui.link @title [ui.sliders] @url ui.sliders-help.pd;
-#X text 175 442 Multiple slider widget;
-#X obj 30 468 ui.link @title [ui.spectroscope~] @url
+#X obj 30 422 ui.link @title [ui.slider] @url ui.slider-help.pd;
+#X text 175 419 counterpart of the vanilla slider;
+#X obj 30 445 ui.link @title [ui.slider2d] @url ui.slider2d-help.pd;
+#X text 175 442 2D slider widget;
+#X obj 30 468 ui.link @title [ui.sliders] @url ui.sliders-help.pd;
+#X text 175 465 Multiple slider widget;
+#X obj 30 491 ui.link @title [ui.spectroscope~] @url
 ui.spectroscope~-help.pd;
-#X text 175 465 Spectroscope GUI object;
-#X obj 30 491 ui.link @title [ui.toggle] @url ui.toggle-help.pd;
-#X text 175 488 modern toggle widget;
+#X text 175 488 Spectroscope GUI object;
+#X obj 30 514 ui.link @title [ui.toggle] @url ui.toggle-help.pd;
+#X text 175 511 modern toggle widget;
 #X obj 1 1 cnv 5 712 40 empty empty ceammc::ui 20 20 0 20 -104026
 -4096 0;
-#X obj 1 511 cnv 5 712 40 empty empty empty 17 7 0 10 -203890 -1 0;
-#X text 20 521 library: ceammc;
+#X obj 1 534 cnv 5 712 40 empty empty empty 17 7 0 10 -203890 -1 0;
+#X text 20 544 library: ceammc;
