@@ -273,9 +273,9 @@ static void slider_modify_single(t_slider* z, t_symbol* s, int argc, t_atom* arg
 
 static void slider_modify(t_slider* z, t_symbol* s)
 {
-    if (s == gensym("++")) {
+    if (s == SYM_INC) {
         slider_set(z, z->f_value + 1);
-    } else if (s == gensym("--")) {
+    } else if (s == SYM_DEC) {
         slider_set(z, z->f_value - 1);
     }
 }
