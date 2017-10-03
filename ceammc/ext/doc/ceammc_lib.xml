@@ -852,6 +852,9 @@
     <entry descr="Display GUI object" name="ui.display" ref_view="link">
       <xi:include href="ui.display.pddoc" parse="xml"/>
     </entry>
+    <entry descr="value increment/decrement" name="ui.incdec" ref_view="link">
+      <xi:include href="ui.incdec.pddoc" parse="xml"/>
+    </entry>
     <entry descr="keyboard widget" name="ui.keyboard" ref_view="link">
       <xi:include href="ui.keyboard.pddoc" parse="xml"/>
     </entry>
