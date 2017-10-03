@@ -6,6 +6,7 @@
 - list.choice - fixed hang on empty list
 - list.choice @norepeat property added - for non repeated index choices
 - flow.change @onrepeat function callback added
+- ui.knob @shift, @offset change to @min, @max. Default value range now is [0-1].
 
 ### Added:
 - math.round~ added
