@@ -870,6 +870,9 @@
     <entry descr="counterpart of the vanilla [nbx] for signal" name="ui.number~" ref_view="link">
       <xi:include href="ui.number~.pddoc" parse="xml"/>
     </entry>
+    <entry descr="counterpart of the vanilla radio toggle" name="ui.radio" ref_view="link">
+      <xi:include href="ui.radio.pddoc" parse="xml"/>
+    </entry>
     <entry descr="Scope GUI object" name="ui.scope~" ref_view="link">
       <xi:include href="ui.scope~.pddoc" parse="xml"/>
     </entry>
