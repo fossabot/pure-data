@@ -18,11 +18,14 @@
             </also>
         </meta>
         <info>
-            <par>Hold *Shift* to move ranges separately</par>
+            <par>Hold *Shift* to move ranges separately. When @sync property is true,
+            outputs value on every mouse move</par>
         </info>
         <properties>
             <property name="@min" type="float" default="0">minimum allowed slider value</property>
             <property name="@max" type="float" default="1">maximum allowed slider value</property>
+            <property name="@sync" type="int" enum="0 1" default="0">mouse sync. If true output
+            on every mouse draggin, otherwise output only on mouse up</property>
             <property name="@value" type="list">current slider value</property>
             <property name="@minvalue" type="float">minimum selected slider value</property>
             <property name="@maxvalue" type="float">maximum selected slider value</property>
@@ -57,6 +60,12 @@
 | |          | |            |
 | |          | |            |
 [ui.rslider @min 0 @max  100]
+|
+[ui.display @display_type=1]
+
+/*Mouse sync is on*/
+
+[ui.rslider @sync 1]
 |
 [ui.display @display_type=1]
 ]]>
