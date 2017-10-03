@@ -264,6 +264,7 @@ ui.keyboard		.		.
 ui.knob		.		.
 ui.matrix		.		.
 ui.menu		.		.
+ui.meter~		~		.
 ui.number~		~		~.
 ui.scope~		.		-
 ui.slider2d		.		.

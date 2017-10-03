@@ -51,13 +51,13 @@
         <example>
             <pdascii>
 <![CDATA[
-[append D(
-|
-| [insert 0 E(  [delete 1(
-| |             |
-| | [clear( [F] | [B]  [D (
-| | |       |   | |    |
-[ui.menu    @items A B C]
+[append sqrt(    [set 0 white noise(
+|                |
+| [insert 0 saw( |  [delete 1(
+| |              |  |
+| | [clear( [F]  |  | [B]  [tri (
+| | |       |    |  | |    |
+[ui.menu      @items sin tri]
 |
 [F]
 |

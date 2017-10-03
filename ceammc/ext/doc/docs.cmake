@@ -271,6 +271,7 @@ set(DOC_FILES
     ui.sliders
     ui.spectroscope~
     ui.toggle
+    ui.meter~
     vector.distance
     vector.dot
     vector.length
