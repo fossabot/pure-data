@@ -5,7 +5,7 @@
 #X obj 1 1 cnv 5 712 40 empty empty ui.menu 20 20 0 20 -104026 -4096
 0;
 #X msg 50 118 append sqrt;
-#X msg 213 118 set 0 white noise;
+#X msg 213 118 setitem 0 white noise;
 #X msg 69 147 insert 0 saw;
 #X msg 242 147 delete 1;
 #X msg 88 176 clear;

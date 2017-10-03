@@ -42,9 +42,11 @@ level;
 #X obj 30 537 ui.link @title [ui.spectroscope~] @url
 ui.spectroscope~-help.pd;
 #X text 175 534 Spectroscope GUI object;
-#X obj 30 560 ui.link @title [ui.toggle] @url ui.toggle-help.pd;
-#X text 175 557 modern toggle widget;
+#X obj 30 560 ui.link @title [ui.tab] @url ui.tab-help.pd;
+#X text 175 557 displays a list of text buttons or text toggles;
+#X obj 30 583 ui.link @title [ui.toggle] @url ui.toggle-help.pd;
+#X text 175 580 modern toggle widget;
 #X obj 1 1 cnv 5 712 40 empty empty ceammc::ui 20 20 0 20 -104026
 -4096 0;
-#X obj 1 580 cnv 5 712 40 empty empty empty 17 7 0 10 -203890 -1 0;
-#X text 20 590 library: ceammc;
+#X obj 1 603 cnv 5 712 40 empty empty empty 17 7 0 10 -203890 -1 0;
+#X text 20 613 library: ceammc;

@@ -273,6 +273,7 @@ ui.slider		.		.
 ui.slider2d		.		.
 ui.sliders		.		.
 ui.spectroscope~		~		-
+ui.tab		.		...
 ui.toggle		.		.
 vector.distance		..		.
 vector.dot		..		.

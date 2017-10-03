@@ -891,6 +891,9 @@
     <entry descr="Spectroscope GUI object" name="ui.spectroscope~" ref_view="link">
       <xi:include href="ui.spectroscope~.pddoc" parse="xml"/>
     </entry>
+    <entry descr="displays a list of text buttons or text toggles" name="ui.tab" ref_view="link">
+      <xi:include href="ui.tab.pddoc" parse="xml"/>
+    </entry>
     <entry descr="modern toggle widget" name="ui.toggle" ref_view="link">
       <xi:include href="ui.toggle.pddoc" parse="xml"/>
     </entry>

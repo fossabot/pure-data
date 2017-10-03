@@ -272,6 +272,7 @@ set(DOC_FILES
     ui.sliders
     ui.radio
     ui.rslider
+    ui.tab
     ui.spectroscope~
     ui.toggle
     ui.meter~
