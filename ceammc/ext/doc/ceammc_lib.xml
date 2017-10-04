@@ -849,6 +849,9 @@
     <entry descr="Breakpoint function GUI object" name="ui.bpfunc" ref_view="link">
       <xi:include href="ui.bpfunc.pddoc" parse="xml"/>
     </entry>
+    <entry descr="colorchooser widget" name="ui.colorpanel" ref_view="link">
+      <xi:include href="ui.colorpanel.pddoc" parse="xml"/>
+    </entry>
     <entry descr="Display GUI object" name="ui.display" ref_view="link">
       <xi:include href="ui.display.pddoc" parse="xml"/>
     </entry>

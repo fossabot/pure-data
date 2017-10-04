@@ -260,6 +260,7 @@ set(DOC_FILES
     tl.transport
     ui.bang
     ui.bpfunc
+    ui.colorpanel
     ui.display
     ui.incdec
     ui.keyboard
