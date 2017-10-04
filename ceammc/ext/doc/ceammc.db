@@ -267,6 +267,7 @@ ui.knob		.		.
 ui.matrix		.		.
 ui.menu		.		.
 ui.meter~		~		.
+ui.number		.		.
 ui.number~		~		~.
 ui.radio		.		.
 ui.rslider		..		.

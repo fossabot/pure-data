@@ -873,6 +873,9 @@
     <entry descr="counterpart of the vanilla [vu]. Shows peak signal level" name="ui.meter~" ref_view="link">
       <xi:include href="ui.meter~.pddoc" parse="xml"/>
     </entry>
+    <entry descr="counterpart of the vanilla [nbx]" name="ui.number" ref_view="link">
+      <xi:include href="ui.number.pddoc" parse="xml"/>
+    </entry>
     <entry descr="counterpart of the vanilla [nbx] for signal" name="ui.number~" ref_view="link">
       <xi:include href="ui.number~.pddoc" parse="xml"/>
     </entry>

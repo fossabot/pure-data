@@ -8,6 +8,7 @@
 - flow.change @onrepeat function callback added
 - ui.knob @shift, @offset change to @min, @max. Default value range now is [0-1]
 - ui.rslider @sync property added, for output on every mouse move
+- ui.number new methods added: +, -, *, /, ++, --
 
 ### Added:
 - math.round~ added

@@ -26,8 +26,8 @@
         </properties>
         <inlets>
             <inlet type="audio">
-                <xinfo on="bang">outputs current menu state</xinfo>
-                <xinfo>intput audio signal</xinfo>
+                <xinfo on="bang">outputs current value to second outlet</xinfo>
+                <xinfo>input audio signal</xinfo>
             </inlet>
         </inlets>
         <outlets>
