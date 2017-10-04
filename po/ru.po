@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pure\\ Data 0.47.1_ceammc\n"
 "Report-Msgid-Bugs-To: pd-dev@iem.at\n"
-"POT-Creation-Date: 2017-10-03 15:22+0300\n"
-"PO-Revision-Date: 2017-03-02 22:22+0300\n"
+"POT-Creation-Date: 2017-10-05 01:10+0300\n"
+"PO-Revision-Date: 2017-10-05 01:29+0300\n"
 "Last-Translator: Serge Poltavski <serge.poltavski@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Language: ru_RU\n"
 "X-Source-Language: C\n"
 "X-Loco-Parser: loco_parse_po\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.4\n"
 
 #: ../tcl/dialog_font.tcl:60
 #, tcl-format
@@ -88,7 +88,7 @@ msgstr ""
 #: ../tcl/pd_deken.tcl:498
 #, tcl-format
 msgid "1. Unzip %s."
-msgstr ""
+msgstr "Распаковка %s."
 
 #: ../tcl/dialog_audio.tcl:183 ../tcl/dialog_audio.tcl:248
 #: ../tcl/dialog_midi.tcl:133 ../tcl/dialog_midi.tcl:241
@@ -98,7 +98,7 @@ msgstr "1:"
 #: ../tcl/pd_deken.tcl:500
 #, tcl-format
 msgid "2. Copy the contents into %s.\n"
-msgstr ""
+msgstr "2. Копирую содержимое в %s.\n"
 
 #: ../tcl/dialog_audio.tcl:197 ../tcl/dialog_audio.tcl:273
 #: ../tcl/dialog_midi.tcl:143 ../tcl/dialog_midi.tcl:251
@@ -195,9 +195,8 @@ msgid "Array Properties"
 msgstr "Свойства Array"
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.incdec.cpp:99
-#, fuzzy
 msgid "Arrow Color"
-msgstr "Цвет границы"
+msgstr "Цвет стрелки"
 
 #: ../tcl/pd-gui.tcl:305 ../tcl/pd-gui.tcl:309 ../tcl/pd-gui.tcl:347
 #: ../tcl/pd-gui.tcl:351 ../tcl/pd-gui.tcl:382 ../tcl/pd-gui.tcl:386
@@ -374,9 +373,8 @@ msgid "Close"
 msgstr "Закрыть"
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.meter_tilde.cpp:265
-#, fuzzy
 msgid "Cold signal color"
-msgstr "Выбрать цвет"
+msgstr "Холодный цвет"
 
 #: ../tcl/dialog_iemgui.tcl:718
 msgid "Colors"
@@ -384,7 +382,7 @@ msgstr "Цвета"
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.matrix.cpp:474
 msgid "Columns"
-msgstr ""
+msgstr "Столбцы"
 
 #: ../tcl/pd_deken.tcl:469
 #, tcl-format
@@ -414,7 +412,7 @@ msgstr "Не удалось найти '%s' в %s"
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.toggle.cpp:180
 msgid "Cross Color"
-msgstr ""
+msgstr "Цвет индикатора"
 
 #: ../tcl/pd_menus.tcl:165 ../tcl/pd_menus.tcl:168 ../tcl/pd_menus.tcl:174
 msgid "Cut"
@@ -530,6 +528,14 @@ msgstr "Поиск расширений"
 msgid "Find..."
 msgstr "Найти..."
 
+#: ../ceammc/extra/CreamLibrary/Sources/c.colorpanel.cpp:129
+msgid "First Hue"
+msgstr "Начальный оттенок"
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.colorpanel.cpp:138
+msgid "First Lightness"
+msgstr "Начальная светлота"
+
 #: ../tcl/dialog_iemgui.tcl:519
 msgid "Flash Time (msec)"
 msgstr "Время индикации нажатия (мкс)"
@@ -609,7 +615,7 @@ msgstr "Горизонтальный диапазон"
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.meter_tilde.cpp:283
 msgid "Hot signal color"
-msgstr ""
+msgstr "Горячий цвет"
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.tab.cpp:556
 #: ../ceammc/extra/CreamLibrary/Sources/c.tab.cpp:572
@@ -682,7 +688,9 @@ msgstr "Число клавиш"
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:417
 #: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:430
+#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:436
 #: ../ceammc/extra/CreamLibrary/Sources/c.slider.cpp:332
+#: ../ceammc/extra/CreamLibrary/Sources/c.slider.cpp:339
 #: ../ceammc/extra/CreamLibrary/Sources/c.slider.cpp:344
 msgid "Knob Color"
 msgstr "Цвет ползунка"
@@ -758,6 +766,11 @@ msgstr "Отступ:"
 msgid "Match whole word only"
 msgstr "Только полное совпадение"
 
+#: ../ceammc/extra/CreamLibrary/Sources/c.colorpanel.cpp:112
+msgid "Matrix Reversed"
+msgstr "Обратная матрица"
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.colorpanel.cpp:105
 #: ../ceammc/extra/CreamLibrary/Sources/c.matrix.cpp:343
 msgid "Matrix Size"
 msgstr "Размер матрицы"
@@ -780,8 +793,11 @@ msgstr ""
 msgid "Max Text Files (.mxt)"
 msgstr ""
 
+#: ../ceammc/extra/CreamLibrary/Sources/c.number.cpp:455
 #: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:407
 #: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:411
+#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:419
+#: ../ceammc/extra/CreamLibrary/Sources/c.slider.cpp:329
 msgid "Maximum Value"
 msgstr "Максимальное значение"
 
@@ -805,10 +821,17 @@ msgstr "Сообщения"
 msgid "Minimize"
 msgstr "Свернуть"
 
+#: ../ceammc/extra/CreamLibrary/Sources/c.number.cpp:448
 #: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:400
 #: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:404
+#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:412
+#: ../ceammc/extra/CreamLibrary/Sources/c.slider.cpp:322
 msgid "Minimum Value"
 msgstr "Минимальное значение"
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:426
+msgid "Mouse sync"
+msgstr "Синхронизировать с мышью"
 
 #: ../tcl/dialog_array.tcl:270
 msgid "Name:"
@@ -861,9 +884,8 @@ msgid "Number of Items"
 msgstr "Число элементов"
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.number_tilde.cpp:244
-#, fuzzy
 msgid "Number of decimal"
-msgstr "Число элементов"
+msgstr "Число разрядов"
 
 #: ../tcl/dialog_iemgui.tcl:528 ../tcl/pd_menus.tcl:227 ../tcl/pd_menus.tcl:230
 #: ../tcl/pd_menus.tcl:241
@@ -930,7 +952,7 @@ msgstr "Диапазон значений"
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.meter_tilde.cpp:289
 msgid "Overload signal color"
-msgstr ""
+msgstr "Цвет перегрузки"
 
 #: ../tcl/dialog_iemgui.tcl:613
 msgid "Parameters"
@@ -983,7 +1005,7 @@ msgstr ""
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:78
 #: ../ceammc/extra/CicmWrapper/Sources/eclass.c:132
 msgid "Pinned"
-msgstr ""
+msgstr "Закрепить на нижнем слое"
 
 #: ../tcl/pd_deken.tcl:496 ../tcl/pd_deken.tcl:497
 msgid "Please perform the following steps manually:"
@@ -1095,7 +1117,11 @@ msgstr "Повторить ввод"
 #: ../ceammc/extra/CreamLibrary/Sources/c.meter_tilde.cpp:255
 #: ../ceammc/extra/CreamLibrary/Sources/c.number_tilde.cpp:236
 msgid "Refresh interval (ms)"
-msgstr ""
+msgstr "Интервал обновления (мс)"
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.slider.cpp:314
+msgid "Relative Mode"
+msgstr "Относительный режим"
 
 #: ../tcl/pd_menus.tcl:339 ../tcl/pd_menus.tcl:346 ../tcl/pd_menus.tcl:357
 msgid "Report a bug"
@@ -1107,11 +1133,15 @@ msgstr "Справа"
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.matrix.cpp:465
 msgid "Rows"
-msgstr ""
+msgstr "Ряды"
 
 #: ../tcl/dialog_audio.tcl:153
 msgid "Sample rate:"
 msgstr "Частота сэмплирования:"
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.colorpanel.cpp:120
+msgid "Saturation"
+msgstr "Насыщенность"
 
 #: ../tcl/pd_menus.tcl:55 ../tcl/pd_menus.tcl:61 ../tcl/pd_menus.tcl:82
 #: ../tcl/pd_menus.tcl:88 ../tcl/pd_menus.tcl:112 ../tcl/pd_menus.tcl:114
@@ -1171,7 +1201,7 @@ msgstr "Выделить все"
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:560
 msgid "Selected Button Color"
-msgstr ""
+msgstr "Цвет выделенной кнопки"
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.tab.cpp:578
 msgid "Selection Color"
@@ -1252,7 +1282,7 @@ msgstr "Не реагировать на клик"
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.incdec.cpp:88
 msgid "Step increment"
-msgstr ""
+msgstr "Шаг инкремента"
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:547
 #: ../ceammc/extra/CreamLibrary/Sources/c.preset.cpp:553
@@ -1396,7 +1426,7 @@ msgstr "До:"
 
 #: ../tcl/dialog_audio.tcl:170
 msgid "Use callbacks"
-msgstr ""
+msgstr "Использовать обратные вызовы"
 
 #: ../tcl/dialog_audio.tcl:320 ../tcl/dialog_midi.tcl:340
 msgid "Use multiple devices"
@@ -1453,12 +1483,13 @@ msgstr "Vertial Slider"
 #: ../tcl/pd-gui.tcl:477 ../tcl/pd-gui.tcl:479 ../tcl/pd-gui.tcl:481
 #, tcl-format
 msgid "WARNING: Font family '%s' not found, using default (%s)\n"
-msgstr ""
+msgstr "ВНИМАНИЕ: Шрифт «%s» не найден, используется шрифт по умолчанию (%s)\n"
 
 #: ../tcl/pd-gui.tcl:485 ../tcl/pd-gui.tcl:487 ../tcl/pd-gui.tcl:489
 #, tcl-format
 msgid "WARNING: Font weight '%s' not found, using default (%s)\n"
 msgstr ""
+"ВНИМАНИЕ: Жирность шрифта «%s» не найдена, используется по умолчанию (%s)\n"
 
 #: ../tcl/dialog_canvas.tcl:122
 msgid "WARNING: unknown graphme flags received in pdtk_canvas_dialog"
@@ -1466,7 +1497,7 @@ msgstr ""
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.meter_tilde.cpp:277
 msgid "Warm signal color"
-msgstr ""
+msgstr "Теплый цвет"
 
 #: ../tcl/dialog_iemgui.tcl:529
 msgid "Width (digits):"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pure\\ Data 0.47.1_ceammc\n"
 "Report-Msgid-Bugs-To: pd-dev@iem.at\n"
-"POT-Creation-Date: 2017-10-03 15:22+0300\n"
+"POT-Creation-Date: 2017-10-05 01:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -195,6 +195,27 @@ msgstr ""
 msgid "Active Color"
 msgstr ""
 
+#: ../ceammc/extra/CreamLibrary/Sources/c.colorpanel.cpp:105
+#: ../ceammc/extra/CreamLibrary/Sources/c.matrix.cpp:343
+msgid "Matrix Size"
+msgstr ""
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.colorpanel.cpp:112
+msgid "Matrix Reversed"
+msgstr ""
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.colorpanel.cpp:120
+msgid "Saturation"
+msgstr ""
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.colorpanel.cpp:129
+msgid "First Hue"
+msgstr ""
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.colorpanel.cpp:138
+msgid "First Lightness"
+msgstr ""
+
 #: ../ceammc/extra/CreamLibrary/Sources/c.dsp_tilde.cpp:187
 #: ../ceammc/extra/CreamLibrary/Sources/c.matrix.cpp:350
 #: ../ceammc/extra/CreamLibrary/Sources/c.menu.cpp:126
@@ -216,10 +237,6 @@ msgstr ""
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.incdec.cpp:99
 msgid "Arrow Color"
-msgstr ""
-
-#: ../ceammc/extra/CreamLibrary/Sources/c.matrix.cpp:343
-msgid "Matrix Size"
 msgstr ""
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.matrix.cpp:362
@@ -280,6 +297,22 @@ msgstr ""
 msgid "Overload signal color"
 msgstr ""
 
+#: ../ceammc/extra/CreamLibrary/Sources/c.number.cpp:448
+#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:400
+#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:404
+#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:412
+#: ../ceammc/extra/CreamLibrary/Sources/c.slider.cpp:322
+msgid "Minimum Value"
+msgstr ""
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.number.cpp:455
+#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:407
+#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:411
+#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:419
+#: ../ceammc/extra/CreamLibrary/Sources/c.slider.cpp:329
+msgid "Maximum Value"
+msgstr ""
+
 #: ../ceammc/extra/CreamLibrary/Sources/c.number_tilde.cpp:244
 msgid "Number of decimal"
 msgstr ""
@@ -314,21 +347,21 @@ msgstr ""
 msgid "Item Color"
 msgstr ""
 
-#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:400
-#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:404
-msgid "Minimum Value"
-msgstr ""
-
-#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:407
-#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:411
-msgid "Maximum Value"
-msgstr ""
-
 #: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:417
 #: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:430
+#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:436
 #: ../ceammc/extra/CreamLibrary/Sources/c.slider.cpp:332
+#: ../ceammc/extra/CreamLibrary/Sources/c.slider.cpp:339
 #: ../ceammc/extra/CreamLibrary/Sources/c.slider.cpp:344
 msgid "Knob Color"
+msgstr ""
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.rslider.cpp:426
+msgid "Mouse sync"
+msgstr ""
+
+#: ../ceammc/extra/CreamLibrary/Sources/c.slider.cpp:314
+msgid "Relative Mode"
 msgstr ""
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.tab.cpp:532
@@ -1026,61 +1059,63 @@ msgstr ""
 msgid "(Tcl) UNHANDLED ERROR: "
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:283
+#: ../tcl/pd_deken.tcl:283 ../tcl/pd_deken.tcl:293
 msgid "Install libraries to directory:"
 msgstr ""
 
 #: ../tcl/pd_deken.tcl:292 ../tcl/pd_deken.tcl:293 ../tcl/pd_deken.tcl:294
-#: ../tcl/pd_deken.tcl:337 ../tcl/pd_deken.tcl:342 ../tcl/pd_deken.tcl:349
-#: ../tcl/pd_deken.tcl:350
+#: ../tcl/pd_deken.tcl:304 ../tcl/pd_deken.tcl:337 ../tcl/pd_deken.tcl:342
+#: ../tcl/pd_deken.tcl:349 ../tcl/pd_deken.tcl:350 ../tcl/pd_deken.tcl:372
 msgid "Show all"
 msgstr ""
 
 #: ../tcl/pd_deken.tcl:294 ../tcl/pd_deken.tcl:295 ../tcl/pd_deken.tcl:296
+#: ../tcl/pd_deken.tcl:306
 msgid "Search"
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:317 ../tcl/pd_deken.tcl:318
+#: ../tcl/pd_deken.tcl:317 ../tcl/pd_deken.tcl:318 ../tcl/pd_deken.tcl:330
 msgid "To get a list of all available externals, try an empty search."
 msgstr ""
 
 #: ../tcl/pd_deken.tcl:319 ../tcl/pd_deken.tcl:324 ../tcl/pd_deken.tcl:331
-#: ../tcl/pd_deken.tcl:332 ../tcl/pd_deken.tcl:565 ../tcl/pd_deken.tcl:567
-#: ../tcl/pd_deken.tcl:578 ../tcl/pd_deken.tcl:580 ../tcl/pd_deken.tcl:590
-#: ../tcl/pd_deken.tcl:591 ../tcl/pd_deken.tcl:592 ../tcl/pd_deken.tcl:593
+#: ../tcl/pd_deken.tcl:332 ../tcl/pd_deken.tcl:348 ../tcl/pd_deken.tcl:565
+#: ../tcl/pd_deken.tcl:567 ../tcl/pd_deken.tcl:578 ../tcl/pd_deken.tcl:580
+#: ../tcl/pd_deken.tcl:590 ../tcl/pd_deken.tcl:591 ../tcl/pd_deken.tcl:592
+#: ../tcl/pd_deken.tcl:593 ../tcl/pd_deken.tcl:615 ../tcl/pd_deken.tcl:617
 msgid "Find externals"
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:354 ../tcl/pd_deken.tcl:355
+#: ../tcl/pd_deken.tcl:354 ../tcl/pd_deken.tcl:355 ../tcl/pd_deken.tcl:377
 msgid "Only install externals uploaded by people you trust."
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:385 ../tcl/pd_deken.tcl:386
+#: ../tcl/pd_deken.tcl:385 ../tcl/pd_deken.tcl:386 ../tcl/pd_deken.tcl:408
 msgid "Searching for externals..."
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:392 ../tcl/pd_deken.tcl:393
+#: ../tcl/pd_deken.tcl:392 ../tcl/pd_deken.tcl:393 ../tcl/pd_deken.tcl:415
 msgid "Unable to perform search. Are you online?"
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:409 ../tcl/pd_deken.tcl:410
+#: ../tcl/pd_deken.tcl:409 ../tcl/pd_deken.tcl:410 ../tcl/pd_deken.tcl:432
 msgid "No matching externals found. Try using the full name e.g. 'freeverb'."
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:452
+#: ../tcl/pd_deken.tcl:452 ../tcl/pd_deken.tcl:476
 msgid "No writeable directory found in:"
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:454
+#: ../tcl/pd_deken.tcl:454 ../tcl/pd_deken.tcl:478
 msgid "Cannot download/install libraries!"
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:458
+#: ../tcl/pd_deken.tcl:458 ../tcl/pd_deken.tcl:482
 #, tcl-format
 msgid "Install to directory %s?"
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:469
+#: ../tcl/pd_deken.tcl:469 ../tcl/pd_deken.tcl:493
 #, tcl-format
 msgid ""
 "Commencing downloading of:\n"
@@ -1088,35 +1123,35 @@ msgid ""
 "Into %s..."
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:491
+#: ../tcl/pd_deken.tcl:491 ../tcl/pd_deken.tcl:515
 #, tcl-format
 msgid "Successfully unzipped %s into %s.\n"
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:495 ../tcl/pd_deken.tcl:496
+#: ../tcl/pd_deken.tcl:495 ../tcl/pd_deken.tcl:496 ../tcl/pd_deken.tcl:520
 msgid "Unable to extract package automatically."
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:496 ../tcl/pd_deken.tcl:497
+#: ../tcl/pd_deken.tcl:496 ../tcl/pd_deken.tcl:497 ../tcl/pd_deken.tcl:521
 msgid "Please perform the following steps manually:"
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:498
+#: ../tcl/pd_deken.tcl:498 ../tcl/pd_deken.tcl:522
 #, tcl-format
 msgid "1. Unzip %s."
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:500
+#: ../tcl/pd_deken.tcl:500 ../tcl/pd_deken.tcl:524
 #, tcl-format
 msgid "2. Copy the contents into %s.\n"
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:579
+#: ../tcl/pd_deken.tcl:579 ../tcl/pd_deken.tcl:603
 #, tcl-format
 msgid "searching for '%s'"
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:672
+#: ../tcl/pd_deken.tcl:672 ../tcl/pd_deken.tcl:696
 #, tcl-format
 msgid "Uploaded by %s @ %s"
 msgstr ""
