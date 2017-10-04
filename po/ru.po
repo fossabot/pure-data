@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Pure\\ Data 0.47.1_ceammc\n"
 "Report-Msgid-Bugs-To: pd-dev@iem.at\n"
 "POT-Creation-Date: 2017-10-05 01:10+0300\n"
-"PO-Revision-Date: 2017-10-05 01:29+0300\n"
+"PO-Revision-Date: 2017-10-05 01:32+0300\n"
 "Last-Translator: Serge Poltavski <serge.poltavski@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -1309,7 +1309,7 @@ msgstr ""
 
 #: ../ceammc/extra/CreamLibrary/Sources/c.meter_tilde.cpp:271
 msgid "Tepid signal color"
-msgstr ""
+msgstr "Умеренный цвет"
 
 #: ../tcl/pd_menus.tcl:266 ../tcl/pd_menus.tcl:269 ../tcl/pd_menus.tcl:280
 msgid "Test Audio and MIDI..."
