@@ -8,9 +8,9 @@ fi
 SRCDIR="$1"
 BINDIR="$2"
 VERSION="$4"
-OUTDIR="$3/ceammclib_compat"
+OUTDIR="$3/ceammclib_extended"
 SYSVER=$(sw_vers | grep ProductVersion | cut -f2 | cut -f1,2 -d.)
-OUTFILE="ceammclib-${VERSION}-macosx-${SYSVER}-compat.tar.gz"
+OUTFILE="ceammclib-${VERSION}-macosx-${SYSVER}-extended.tar.gz"
 DYLIBBUNDLER="@DYLIBBUNDLER@"
 
 
