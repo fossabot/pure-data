@@ -44,6 +44,7 @@
 - local.list help added
 - ui.menu help added
 - ui.number~ help added
+- ui.number help added
 - ui.meter~ help added
 - ui.colorpanel help added
 - ui.slider help added

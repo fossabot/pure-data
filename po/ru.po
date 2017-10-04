@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pure\\ Data 0.47.1_ceammc\n"
 "Report-Msgid-Bugs-To: pd-dev@iem.at\n"
-"POT-Creation-Date: 2017-10-05 01:10+0300\n"
+"POT-Creation-Date: 2017-10-05 01:34+0300\n"
 "PO-Revision-Date: 2017-10-05 01:32+0300\n"
 "Last-Translator: Serge Poltavski <serge.poltavski@gmail.com>\n"
 "Language-Team: Russian\n"
@@ -85,7 +85,7 @@ msgstr ""
 msgid "------visible_rectangle(pix)(pix):------"
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:498
+#: ../tcl/pd_deken.tcl:498 ../tcl/pd_deken.tcl:522
 #, tcl-format
 msgid "1. Unzip %s."
 msgstr "Распаковка %s."
@@ -95,7 +95,7 @@ msgstr "Распаковка %s."
 msgid "1:"
 msgstr "1:"
 
-#: ../tcl/pd_deken.tcl:500
+#: ../tcl/pd_deken.tcl:500 ../tcl/pd_deken.tcl:524
 #, tcl-format
 msgid "2. Copy the contents into %s.\n"
 msgstr "2. Копирую содержимое в %s.\n"
@@ -329,7 +329,7 @@ msgstr "CEAMMC объекты"
 msgid "Cancel"
 msgstr "Отмена"
 
-#: ../tcl/pd_deken.tcl:454
+#: ../tcl/pd_deken.tcl:454 ../tcl/pd_deken.tcl:478
 msgid "Cannot download/install libraries!"
 msgstr "Невозможно загрузить/установить библиотеки!"
 
@@ -384,7 +384,7 @@ msgstr "Цвета"
 msgid "Columns"
 msgstr "Столбцы"
 
-#: ../tcl/pd_deken.tcl:469
+#: ../tcl/pd_deken.tcl:469 ../tcl/pd_deken.tcl:493
 #, tcl-format
 msgid ""
 "Commencing downloading of:\n"
@@ -518,9 +518,10 @@ msgid "Find Last Error"
 msgstr "Найти последнюю ошибку"
 
 #: ../tcl/pd_deken.tcl:319 ../tcl/pd_deken.tcl:324 ../tcl/pd_deken.tcl:331
-#: ../tcl/pd_deken.tcl:332 ../tcl/pd_deken.tcl:565 ../tcl/pd_deken.tcl:567
-#: ../tcl/pd_deken.tcl:578 ../tcl/pd_deken.tcl:580 ../tcl/pd_deken.tcl:590
-#: ../tcl/pd_deken.tcl:591 ../tcl/pd_deken.tcl:592 ../tcl/pd_deken.tcl:593
+#: ../tcl/pd_deken.tcl:332 ../tcl/pd_deken.tcl:348 ../tcl/pd_deken.tcl:565
+#: ../tcl/pd_deken.tcl:567 ../tcl/pd_deken.tcl:578 ../tcl/pd_deken.tcl:580
+#: ../tcl/pd_deken.tcl:590 ../tcl/pd_deken.tcl:591 ../tcl/pd_deken.tcl:592
+#: ../tcl/pd_deken.tcl:593 ../tcl/pd_deken.tcl:615 ../tcl/pd_deken.tcl:617
 msgid "Find externals"
 msgstr "Поиск расширений"
 
@@ -654,11 +655,11 @@ msgstr ""
 msgid "Input Devices"
 msgstr "Устройства ввода"
 
-#: ../tcl/pd_deken.tcl:283
+#: ../tcl/pd_deken.tcl:283 ../tcl/pd_deken.tcl:293
 msgid "Install libraries to directory:"
 msgstr "Установить в директорию:"
 
-#: ../tcl/pd_deken.tcl:458
+#: ../tcl/pd_deken.tcl:458 ../tcl/pd_deken.tcl:482
 #, tcl-format
 msgid "Install to directory %s?"
 msgstr "Установить в директорию «%s»?"
@@ -856,13 +857,13 @@ msgstr "Следующее окно"
 msgid "No init"
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:409 ../tcl/pd_deken.tcl:410
+#: ../tcl/pd_deken.tcl:409 ../tcl/pd_deken.tcl:410 ../tcl/pd_deken.tcl:432
 msgid "No matching externals found. Try using the full name e.g. 'freeverb'."
 msgstr ""
 "Расширение не найдено. Попробуйте использовать полное имя, например "
 "‘freeverb’."
 
-#: ../tcl/pd_deken.tcl:452
+#: ../tcl/pd_deken.tcl:452 ../tcl/pd_deken.tcl:476
 msgid "No writeable directory found in:"
 msgstr "Не найдена директория доступная для записи среди:"
 
@@ -911,7 +912,7 @@ msgstr ""
 msgid "Object"
 msgstr "Объект"
 
-#: ../tcl/pd_deken.tcl:354 ../tcl/pd_deken.tcl:355
+#: ../tcl/pd_deken.tcl:354 ../tcl/pd_deken.tcl:355 ../tcl/pd_deken.tcl:377
 msgid "Only install externals uploaded by people you trust."
 msgstr "Устанавливайте расширения только от людей, которым вы доверяете."
 
@@ -1007,7 +1008,7 @@ msgstr ""
 msgid "Pinned"
 msgstr "Закрепить на нижнем слое"
 
-#: ../tcl/pd_deken.tcl:496 ../tcl/pd_deken.tcl:497
+#: ../tcl/pd_deken.tcl:496 ../tcl/pd_deken.tcl:497 ../tcl/pd_deken.tcl:521
 msgid "Please perform the following steps manually:"
 msgstr "Пожалуйста, сделайте вручную следующие шаги:"
 
@@ -1184,6 +1185,7 @@ msgid "Scale"
 msgstr "Масштаб"
 
 #: ../tcl/pd_deken.tcl:294 ../tcl/pd_deken.tcl:295 ../tcl/pd_deken.tcl:296
+#: ../tcl/pd_deken.tcl:306
 msgid "Search"
 msgstr "Поиск"
 
@@ -1191,7 +1193,7 @@ msgstr "Поиск"
 msgid "Search in"
 msgstr "Поиск в"
 
-#: ../tcl/pd_deken.tcl:385 ../tcl/pd_deken.tcl:386
+#: ../tcl/pd_deken.tcl:385 ../tcl/pd_deken.tcl:386 ../tcl/pd_deken.tcl:408
 msgid "Searching for externals..."
 msgstr "…Поиск расширений"
 
@@ -1230,8 +1232,8 @@ msgid "Shift"
 msgstr "Смещение"
 
 #: ../tcl/pd_deken.tcl:292 ../tcl/pd_deken.tcl:293 ../tcl/pd_deken.tcl:294
-#: ../tcl/pd_deken.tcl:337 ../tcl/pd_deken.tcl:342 ../tcl/pd_deken.tcl:349
-#: ../tcl/pd_deken.tcl:350
+#: ../tcl/pd_deken.tcl:304 ../tcl/pd_deken.tcl:337 ../tcl/pd_deken.tcl:342
+#: ../tcl/pd_deken.tcl:349 ../tcl/pd_deken.tcl:350 ../tcl/pd_deken.tcl:372
 msgid "Show all"
 msgstr "Показать все"
 
@@ -1294,7 +1296,7 @@ msgstr "Цвет сохраненной ячейки"
 msgid "Stretch"
 msgstr "Масштаб"
 
-#: ../tcl/pd_deken.tcl:491
+#: ../tcl/pd_deken.tcl:491 ../tcl/pd_deken.tcl:515
 #, tcl-format
 msgid "Successfully unzipped %s into %s.\n"
 msgstr "Успешно распакован файл %s в директорию %s.\n"
@@ -1339,7 +1341,7 @@ msgstr "Расставить"
 msgid "Title"
 msgstr "Текст"
 
-#: ../tcl/pd_deken.tcl:317 ../tcl/pd_deken.tcl:318
+#: ../tcl/pd_deken.tcl:317 ../tcl/pd_deken.tcl:318 ../tcl/pd_deken.tcl:330
 msgid "To get a list of all available externals, try an empty search."
 msgstr ""
 "Чтобы получить список всех доступных расширений используйте пустой запрос."
@@ -1366,11 +1368,11 @@ msgstr "Крайнее верхнее значение"
 msgid "URL"
 msgstr "URL"
 
-#: ../tcl/pd_deken.tcl:495 ../tcl/pd_deken.tcl:496
+#: ../tcl/pd_deken.tcl:495 ../tcl/pd_deken.tcl:496 ../tcl/pd_deken.tcl:520
 msgid "Unable to extract package automatically."
 msgstr "Невозможно распаковать пакет автоматически."
 
-#: ../tcl/pd_deken.tcl:392 ../tcl/pd_deken.tcl:393
+#: ../tcl/pd_deken.tcl:392 ../tcl/pd_deken.tcl:393 ../tcl/pd_deken.tcl:415
 msgid "Unable to perform search. Are you online?"
 msgstr "Невозможно выполнить поиск. Вы онлайн?"
 
@@ -1413,7 +1415,7 @@ msgstr "Отменить вставку"
 msgid "Undo typing"
 msgstr "Отменить ввод"
 
-#: ../tcl/pd_deken.tcl:672
+#: ../tcl/pd_deken.tcl:672 ../tcl/pd_deken.tcl:696
 #, tcl-format
 msgid "Uploaded by %s @ %s"
 msgstr "Добавлено пользователем %s @ %s"
@@ -1640,7 +1642,7 @@ msgstr ""
 msgid "right:"
 msgstr ""
 
-#: ../tcl/pd_deken.tcl:579
+#: ../tcl/pd_deken.tcl:579 ../tcl/pd_deken.tcl:603
 #, tcl-format
 msgid "searching for '%s'"
 msgstr "поиск «%s»"
