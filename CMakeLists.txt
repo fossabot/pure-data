@@ -83,3 +83,6 @@ if(APPLE)
 endif()
 
 add_custom_target(puredata_changelog SOURCES CHANGELOG.md)
+
+file(GLOB _DEB_FILES "debian/*")
+add_custom_target(deb_files SOURCES ${_DEB_FILES})
