@@ -49,8 +49,6 @@ Source: "{#AppRoot}/doc/*"; DestDir: "{app}/doc"; Flags: ignoreversion recursesu
 Source: "{#AppRoot}/include/*.h"; DestDir: "{app}/include";
 ; Source: "{#AppRoot}/fonts/DejaVuSerif.ttf"; DestDir: "{fonts}"; FontInstall: "DejaVu Serif"; Flags: onlyifdoesntexist uninsneveruninstall
 Source: "{#AppRoot}/fonts/DejaVuSansMono.ttf"; DestDir: "{fonts}"; FontInstall: "DejaVu Sans Mono"; Flags: onlyifdoesntexist uninsneveruninstall
-Source: "{#AppRoot}/fonts/DejaVuSans.ttf"; DestDir: "{fonts}"; FontInstall: "DejaVu Sans"; Flags: onlyifdoesntexist uninsneveruninstall
-
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
