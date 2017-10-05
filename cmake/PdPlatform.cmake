@@ -118,6 +118,12 @@ if(WIN32)
         install(PROGRAMS ${MODPLUGDLL_PATH} DESTINATION ${PD_EXE_INSTALL_PATH})
     endif()
 
+    # install libfftw3f-3.dll
+    find_file(FFTWDLL_PATH NAMES libfftw3f-3.dll PATHS ${WISH_BINDIR})
+    if(FFTWDLL_PATH)
+        install(PROGRAMS ${FFTWDLL_PATH} DESTINATION ${PD_EXE_INSTALL_PATH})
+    endif()
+
     # mingw runtime libs
 
     get_filename_component(_MINGW_PATH ${CMAKE_CXX_COMPILER} PATH)

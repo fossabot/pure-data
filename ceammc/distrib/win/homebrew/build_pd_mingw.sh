@@ -10,6 +10,9 @@ PD_DIR=$1
 CWD=`pwd`
 
 PREFIX="/opt/local/mingw32"
+CURRENT_DATE=$(LANG=C date -u '+%d %h %Y %Z %H:%M:%S')
+GIT_BRANCH=$(git --git-dir $PD_DIR/.git symbolic-ref --short HEAD)
+GIT_COMMIT=$(git --git-dir $PD_DIR/.git describe --tags)
 
 export PKG_CONFIG_PATH="${PREFIX}/lib/pkgconfig"
 ls ${PKG_CONFIG_PATH}
@@ -28,10 +31,10 @@ export ProgramW6432="${HOME}/.wine/drive_c/Program Files/"
 export PROGRAMFILES="${HOME}/.wine/drive_c/Program Files/"
 export DNSSD_ROOT="${HOME}/.wine/drive_c/Program\ Files/Bonjour SDK"
 
-cmake -DCMAKE_BUILD_TYPE=Release \
+cmake -DCMAKE_TOOLCHAIN_FILE=../Toolchain-mingw32.cmake \
+    -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_PREFIX_PATH=${PREFIX} \
     -DBOOST_ROOT=/usr/local/include \
-    -DCMAKE_TOOLCHAIN_FILE=../Toolchain-mingw32.cmake \
     -DWITH_DUMMY_AUDIO=OFF \
     -DWITH_DUMMY_MIDI=OFF \
     -DWITH_PORTAUDIO=ON \
@@ -40,3 +43,10 @@ cmake -DCMAKE_BUILD_TYPE=Release \
     ${PD_DIR}
 
 make -j3 install
+
+echo "Copy about file..."
+cat ceammc/ext/doc/about.pd | sed "s/%GIT_BRANCH%/$GIT_BRANCH/g" | \
+   sed "s/%GIT_COMMIT%/$GIT_COMMIT/g" | \
+   sed "s/%BUILD_DATE%/$CURRENT_DATE/g" > tmp.about.pd
+chmod 0444 tmp.about.pd
+cp tmp.about.pd ceammc/ext/doc/about.pd
