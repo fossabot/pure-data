@@ -58,9 +58,10 @@ function mytest {
     return $status
 }
 
+rm -rf dist
+
 mytest make -j3
 mytest make test
-mytest rm -rf dist
 mytest make app
 mytest make dmg
 mytest make ceammc_lib
