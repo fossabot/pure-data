@@ -52,6 +52,7 @@
 - ui.rslider help added
 - ui.tab help added
 - ui.incdec help added
+- ui.link help added
 - symbol.num_compare help added
 - preset.float added
 - preset.symbol added

@@ -264,6 +264,7 @@ ui.display		.		-
 ui.incdec		.		.
 ui.keyboard		.		.
 ui.knob		.		.
+ui.link		-		-
 ui.matrix		.		.
 ui.menu		.		.
 ui.meter~		~		.

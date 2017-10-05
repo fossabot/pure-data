@@ -268,6 +268,7 @@ set(DOC_FILES
     ui.matrix
     ui.menu
     ui.number
+    ui.link
     ui.number~
     ui.scope~
     ui.slider
