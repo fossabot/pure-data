@@ -31,7 +31,6 @@ export DNSSD_ROOT="${HOME}/.wine/drive_c/Program\ Files/Bonjour SDK"
 cmake -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_PREFIX_PATH=${PREFIX} \
     -DBOOST_ROOT=/usr/local/include \
-    -DLEAPMOTION_ROOT=/Users/serj/work/misc/LeapSDK_win/LeapSDK \
     -DCMAKE_TOOLCHAIN_FILE=../Toolchain-mingw32.cmake \
     -DWITH_DUMMY_AUDIO=OFF \
     -DWITH_DUMMY_MIDI=OFF \
@@ -40,5 +39,4 @@ cmake -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=${PREFIX}/pd \
     ${PD_DIR}
 
-make -j3
-make install
+make -j3 install
