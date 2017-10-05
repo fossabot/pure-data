@@ -20,7 +20,7 @@ puredata.info];
 #X msg 120 326 @url;
 #X text 240 326 Get/Set destination url. Type: symbol;
 #X msg 120 353 @title;
-#X text 240 353 Get/Set receive source. Type: symbol;
+#X text 240 353 Get/Set link title. Type: symbol;
 #X obj 10 48 ui.link @title index @url ../index-help.pd;
 #X text 51 45 ::;
 #X obj 67 48 ui.link @title ceammc @url ceammc-help.pd;

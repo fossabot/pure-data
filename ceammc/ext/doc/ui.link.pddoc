@@ -21,7 +21,7 @@
         </info>
         <properties>
             <property name="@url" type="symbol">destination url</property>
-            <property name="@title" type="symbol">receive source</property>
+            <property name="@title" type="symbol">link title</property>
         </properties>
         <example>
             <pdascii>
