@@ -48,5 +48,4 @@ echo "Copy about file..."
 cat ceammc/ext/doc/about.pd | sed "s/%GIT_BRANCH%/$GIT_BRANCH/g" | \
    sed "s/%GIT_COMMIT%/$GIT_COMMIT/g" | \
    sed "s/%BUILD_DATE%/$CURRENT_DATE/g" > tmp.about.pd
-chmod 0444 tmp.about.pd
 cp tmp.about.pd ceammc/ext/doc/about.pd
