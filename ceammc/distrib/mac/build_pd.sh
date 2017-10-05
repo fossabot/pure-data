@@ -44,25 +44,11 @@ cmake -DCMAKE_BUILD_TYPE=Release \
 
 cmake ${PD_SRC_DIR}
 
-function mytest {
-    "$@"
-    local status=$?
-    if [ $status -ne 0 ]; then
-        tput setaf 1
-        echo "Error:"
-        tput sgr0
-        echo "      with $1" >&2
-        tput sgr0
-        exit 1
-    fi
-    return $status
-}
-
-mytest make -j3
-mytest make test
-mytest rm -rf dist
-mytest make app
-mytest make dmg
-mytest make ceammc_lib
-mytest make ceammc_lib_external
+make -j3
+make test
+rm -rf dist
+make app
+make dmg
+make ceammc_lib
+make ceammc_lib_compat
 
