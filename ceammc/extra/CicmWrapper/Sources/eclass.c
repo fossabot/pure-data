@@ -81,7 +81,15 @@ void tcl_version_init()
 t_eclass* eclass_new(const char* name, t_typ_method newm, t_typ_method freem, size_t size, int flags, t_atomtype arg1, int arg2)
 {
     t_class* pd = class_new(gensym(name), (t_newmethod)newm, (t_method)freem, size, flags, arg1, arg2);
-    t_eclass* c = (t_eclass*)realloc(pd, sizeof(t_eclass));
+    if (!pd) {
+        bug("PureData Memory allocation failed for the class %s.", name);
+        return 0;
+    }
+
+    // we are using same size to prevent PD from memset to 0 resized memory.
+    // we should do this way because some versions of PD have different sizeof(t_class)
+    t_eclass* c = (t_eclass*)resizebytes(pd, sizeof(t_eclass), sizeof(t_eclass));
+
     if (c) {
         tcl_version_init();
         epd_init();
@@ -93,7 +101,9 @@ t_eclass* eclass_new(const char* name, t_typ_method newm, t_typ_method freem, si
         c->c_attr = NULL;
     } else {
         bug("Memory allocation failed for the class %s.", name);
+        return 0;
     }
+
     return c;
 }
 
