@@ -97,7 +97,6 @@ void ceammc_list_setup()
     setup_list0x2esort();
     setup_list0x2esort_with();
     setup_list0x2esplit();
-    return;
     setup_list0x2estretch();
     setup_list0x2esum();
     setup_list0x2eunique();
