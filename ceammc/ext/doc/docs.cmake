@@ -140,6 +140,7 @@ set(DOC_FILES
     list.slice
     list.sort
     list.sort_with
+    list.split
     list.sum
     list.unique
     list.unpack
