@@ -88,6 +88,7 @@ ceammc_external_test(list none_of)
 ceammc_external_test(list normalize)
 ceammc_external_test(list rotate)
 ceammc_external_test(list slice)
+ceammc_external_test(list split)
 ceammc_external_test(list at)
 ceammc_external_test(list count)
 
