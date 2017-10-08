@@ -28,22 +28,22 @@ environment:
 
 
 install:
-    - if not exist "%TCL_ARCHIVE%" appveyor DownloadFile "%TCL_URL%" -FileName "%TCL_ARCHIVE%"
-    - if not exist "%TK_ARCHIVE%" appveyor DownloadFile "%TK_URL%" -FileName "%TK_ARCHIVE%"
-    - 7z x -y "%TCL_ARCHIVE%" > nul
-    - 7z x -y "%TK_ARCHIVE%" > nul
+    #- if not exist "%TCL_ARCHIVE%" appveyor DownloadFile "%TCL_URL%" -FileName "%TCL_ARCHIVE%"
+    #- if not exist "%TK_ARCHIVE%" appveyor DownloadFile "%TK_URL%" -FileName "%TK_ARCHIVE%"
+    #- 7z x -y "%TCL_ARCHIVE%" > nul
+    #- 7z x -y "%TK_ARCHIVE%" > nul
     # install TCL
-    - cd tcl-release/win
-    - call "%VCVARS%"
-    - set INSTALLDIR=%TCL_INSTALL_DIR%
-    - nmake -nologo -f makefile.vc all install
-    - cd ../..
+    #- cd tcl-release/win
+    #- call "%VCVARS%"
+    #- set INSTALLDIR=%TCL_INSTALL_DIR%
+    #- nmake -nologo -f makefile.vc all install
+    #- cd ../..
     # install Tk
-    - cd tk-release/win
-    - set TCLDIR=../../tcl-release
-    - nmake -nologo -f makefile.vc all install
-    - cd ../..
-    - dir C:\Tcl\bin
+    #- cd tk-release/win
+    #- set TCLDIR=../../tcl-release
+    #- nmake -nologo -f makefile.vc all install
+    #- cd ../..
+    #- dir C:\Tcl\bin
 
 before_build:
     - dir
