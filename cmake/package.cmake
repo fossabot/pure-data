@@ -43,6 +43,8 @@ if(DPKG_FOUND AND NOT WIN32)
         execute_process(COMMAND ${XDG-DESKTOP-MENU_EXECUTABLE} install --novendor ${PD_DESKTOP_DIR}/${DESKTOP_FILE})
         execute_process(COMMAND ${XDG-MIME_EXECUTABLE} default ${DESKTOP_FILE} text/x-puredata)
     ")
+  
+    include(CheckLSBTypes)
 
     set(CPACK_GENERATOR "DEB")
     set(CPACK_PACKAGE_VERSION "${CEAMMC_DISTRIB_VERSION}:${PD_TEXT_VERSION_SHORT}")
