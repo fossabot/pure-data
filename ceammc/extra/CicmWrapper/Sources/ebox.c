@@ -161,7 +161,7 @@ void ebox_attrprocess_viatoms(void* x, int argc, t_atom* argv)
         if (defc && defv) {
             eobj_attr_setvalueof(x, c->c_attr[i]->name, defc, defv);
             defc = 0;
-            freebytes(defv);
+            free(defv);
             defv = NULL;
         }
     }
@@ -181,7 +181,7 @@ void ebox_attrprocess_viabinbuf(void* x, t_binbuf* d)
         if (defc && defv) {
             eobj_attr_setvalueof(x, c->c_attr[i]->name, defc, defv);
             defc = 0;
-            freebytes(defv);
+            free(defv);
             defv = NULL;
         }
     }
@@ -197,7 +197,7 @@ static void ebox_attrprocess_default(void* x)
     for (i = 0; i < c->c_nattr; i++) {
         if (c->c_attr[i]->defvals) {
             defc = c->c_attr[i]->size;
-            defv = (t_atom*)getbytes((unsigned long)defc * sizeof(t_atom));
+            defv = (t_atom*)calloc((unsigned long)defc, sizeof(t_atom));
             if (defc && defv) {
                 char check = 0;
                 char* str_start = c->c_attr[i]->defvals->s_name;
@@ -215,13 +215,9 @@ static void ebox_attrprocess_default(void* x)
                 }
                 eobj_attr_setvalueof(x, c->c_attr[i]->name, (int)defc, defv);
             }
-
             if (defv) {
-                freebytes(defv);
+                free(defv);
                 defv = NULL;
-            }
-            else {
-                bug("can't allocate memory: %s", __FILE__);
             }
         }
     }
@@ -734,7 +730,7 @@ void ebox_dosave(t_ebox* x, t_binbuf* b)
                 if (argc && argv) {
                     snprintf(attr_name, MAXPDSTRING, "@%s", c->c_attr[i]->name->s_name);
                     binbuf_append_attribute(b, gensym(attr_name), argc, argv);
-                    freebytes(argv);
+                    free(argv);
                 }
             }
         }
@@ -967,7 +963,7 @@ void ebox_attr_dump(t_ebox* x)
                 strcat(buf, " ");
             }
 
-            freebytes(argv);
+            free(argv);
             post("[%s] property: @%s = %s", name, c->c_attr[i]->name->s_name, buf);
         }
     }
@@ -988,20 +984,14 @@ void ebox_output_all_attrs(t_ebox* x)
     }
 
     char buf[MAXPDSTRING];
-    t_atom* argv = (t_atom*)getbytes(argc * sizeof(t_atom));
-
-    if(!argv) {
-        bug("%s: can't allocate memory for arguments", __FILE__);
-        return;
-    }
-
+    t_atom* argv = (t_atom*)malloc(argc * sizeof(t_atom));
     for (int i = 0; i < c->c_nattr; i++) {
         sprintf(buf, "@%s", c->c_attr[i]->name->s_name);
         atom_setsym(&argv[i], gensym(buf));
     }
 
     outlet_anything(x->b_obj.o_obj.te_outlet, gensym("@*"), argc, argv);
-    freebytes(argv);
+    free(argv);
 }
 
 void ebox_properties(t_ebox* x, t_glist* glist)
@@ -1051,7 +1041,7 @@ void ebox_properties(t_ebox* x, t_glist* glist)
                 } else {
                     strncat(buffer, temp, lenght);
                 }
-                freebytes(argv, 0);
+                free(argv);
 #endif
             }
             strncat(buffer, "\"", 1);
@@ -1114,7 +1104,7 @@ void ebox_dialog(t_ebox* x, t_symbol* s, int argc, t_atom* argv)
                         sys_vgui("%s.top_frame.sele%i.selec insert 0 [string trim \"%s\"] \n", atom_getsymbol(argv)->s_name, attrindex + 1, buffer);
                     }
 
-                    freebytes(av);
+                    free(av);
                 }
             }
         }
@@ -1168,19 +1158,19 @@ t_elayer* ebox_start_layer(t_ebox* x, t_symbol* name, float width, float height)
 
                 for (j = 0; j < graphic->e_number_objects; j++) {
                     if (graphic->e_objects[j].e_npoints && graphic->e_objects[j].e_points) {
-                        freebytes(graphic->e_objects[j].e_points, 0);
+                        free(graphic->e_objects[j].e_points);
                     }
                     graphic->e_objects[j].e_points = NULL;
                     graphic->e_objects[j].e_npoints = 0;
                 }
                 if (graphic->e_objects) {
-                    freebytes(graphic->e_objects, 0);
+                    free(graphic->e_objects);
                     graphic->e_objects = NULL;
                 }
                 graphic->e_number_objects = 0;
 
                 if (graphic->e_new_objects.e_points) {
-                    freebytes(graphic->e_new_objects.e_points, 0);
+                    free(graphic->e_new_objects.e_points);
                 }
                 graphic->e_new_objects.e_points = NULL;
                 graphic->e_new_objects.e_npoints = 0;
@@ -1478,7 +1468,7 @@ static void ebox_erase(t_ebox* x)
         x->b_have_window = 0;
     }
     if (x->b_layers) {
-        freebytes(x->b_layers, 0);
+        free(x->b_layers);
         x->b_layers = NULL;
     }
     x->b_number_of_layers = 0;
@@ -1522,7 +1512,7 @@ void ebox_setzoom(t_ebox* x, float f)
         eobj_attr_setvalueof(x, gensym("size"), argc, argv);
     }
 
-    freebytes(argv, 0);
+    free(argv);
     ebox_redraw(x);
 }
 
