@@ -460,25 +460,16 @@ void eclass_attr_itemlist(t_eclass* c, const char* attrname, long flags, const c
                 pch = strtok(NULL, " ,");
                 size++;
             }
-
             if (size > 0) {
                 if (c->c_attr[i]->itemssize) {
                     size_t new_sz = (unsigned long)size * sizeof(t_symbol*);
-
                     c->c_attr[i]->itemslist = (t_symbol**)resizebytes(c->c_attr[i]->itemslist, new_sz, new_sz);
-
                     if (c->c_attr[i]->itemslist)
                         c->c_attr[i]->itemssize = size;
-                    else
-                        bug("can't resize attribute items list");
-
                 } else {
                     c->c_attr[i]->itemslist = (t_symbol**)getbytes((unsigned long)size * sizeof(t_symbol*));
-
                     if (c->c_attr[i]->itemslist)
                         c->c_attr[i]->itemssize = size;
-                    else
-                        big("can't allocate attribute items list");
                 }
                 if (c->c_attr[i]->itemslist && c->c_attr[i]->itemssize) {
                     pch = strtok(gensym(list)->s_name, " ,");
@@ -623,11 +614,6 @@ void eclass_attr_getter(t_object* x, t_symbol* s, int* argc, t_atom** argv)
         point = (char*)x + c->c_attr[i]->offset;
 
         argv[0] = (t_atom*)getbytes((size_t)*argc * sizeof(t_atom));
-
-        if(!argv[0]) {
-            bug("can't allocate attr result");
-            return;
-        }
 
         if (c->c_attr[i]->getter) {
             c->c_attr[i]->getter(x, c->c_attr[i], argc, argv);
