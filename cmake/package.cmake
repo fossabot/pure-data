@@ -9,7 +9,7 @@ set(CPACK_PACKAGE_VENDOR "http://ceammc.com")
 set(CPACK_PACKAGE_CONTACT "http://ceammc.com")
 set(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_SOURCE_DIR}/README.txt")
 set(CPACK_PACKAGE_VERSION_MAJOR ${CEAMMC_DISTRIB_VERSION})
-set(CPACK_PACKAGE_VERSION_MINOR "-${PD_MAJOR_VERSION}.${PD_MINOR_VERSION}")
+set(CPACK_PACKAGE_VERSION_MINOR "${PD_MAJOR_VERSION}.${PD_MINOR_VERSION}")
 set(CPACK_PACKAGE_VERSION_PATCH ${PD_BUGFIX_VERSION})
 set(CPACK_STRIP_FILES ON)
 
@@ -38,20 +38,20 @@ if(DPKG_FOUND AND NOT WIN32)
     # Desktop files
     install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE}" DESTINATION ${PD_DESKTOP_DIR})
 
-    install(CODE "
-        execute_process(COMMAND ${XDG-MIME_EXECUTABLE} install --novendor ${PD_MIME_DIR}/${MIME_FILE})
-        execute_process(COMMAND ${XDG-DESKTOP-MENU_EXECUTABLE} install --novendor ${PD_DESKTOP_DIR}/${DESKTOP_FILE})
-        execute_process(COMMAND ${XDG-MIME_EXECUTABLE} default ${DESKTOP_FILE} text/x-puredata)
-    ")
+    #install(CODE "
+    #    execute_process(COMMAND ${XDG-MIME_EXECUTABLE} install --novendor ${PD_MIME_DIR}/${MIME_FILE})
+    #    execute_process(COMMAND ${XDG-DESKTOP-MENU_EXECUTABLE} install --novendor ${PD_DESKTOP_DIR}/${DESKTOP_FILE})
+    #   execute_process(COMMAND ${XDG-MIME_EXECUTABLE} default ${DESKTOP_FILE} text/x-puredata)
+    #")
   
     include(CheckLSBTypes)
 
     set(CPACK_GENERATOR "DEB")
-    set(CPACK_PACKAGE_VERSION "${CEAMMC_DISTRIB_VERSION}:${PD_TEXT_VERSION_SHORT}")
+    set(CPACK_PACKAGE_VERSION "${CEAMMC_DISTRIB_VERSION}-${PD_TEXT_VERSION_SHORT}")
     set(CPACK_PACKAGE_FILE_NAME "pd-ceammc-${CPACK_PACKAGE_VERSION}_${LSB_CODENAME}_${LSB_PROCESSOR_ARCH}")
     set(CPACK_DEBIAN_PACKAGE_NAME "pd-ceammc")
     set(CPACK_DEBIAN_PACKAGE_VERSION ${CEAMMC_DISTRIB_VERSION})
-    set(CPACK_DEBIAN_PACKAGE_DEPENDS "tk, tcl, tcllib, tklib")
+    set(CPACK_DEBIAN_PACKAGE_DEPENDS "tk, tcl, tcllib, tklib, xdg-utils")
     set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Serge Poltavski <serge.poltavski@gmail.com>")
     set(CPACK_DEBIAN_PACKAGE_SECTION "sound")
     set(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://github.com/uliss/pure-data")
@@ -61,6 +61,11 @@ if(DPKG_FOUND AND NOT WIN32)
   ${CPACK_PACKAGE_DESCRIPTION}")
     set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
     set(CPACK_SET_DESTDIR TRUE)
+
+    set(POSTINST_FILE "${CMAKE_SOURCE_DIR}/ceammc/distrib/linux/deb/postinst")
+    set(POSTRM_FILE "${CMAKE_SOURCE_DIR}/ceammc/distrib/linux/deb/postrm")
+  
+    set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${POSTINST_FILE};${POSTRM_FILE}")
 
     install(FILES "${CMAKE_SOURCE_DIR}/debian/copyright"
         DESTINATION share/doc/${CPACK_DEBIAN_PACKAGE_NAME}/copyright
