@@ -80,8 +80,8 @@ include(CPack)
 
 add_custom_target(src-zip
     COMMAND "${CMAKE_SOURCE_DIR}/ceammc/distrib/git-archive-all/git_archive_all.py"
-            "pd-ceammc-${CEAMMC_DISTRIB_VERSION}.zip")
+            "pd-ceammc-${CEAMMC_DISTRIB_VERSION}-src.zip")
 
 add_custom_target(src-tar
     COMMAND "${CMAKE_SOURCE_DIR}/ceammc/distrib/git-archive-all/git_archive_all.py"
-            "pd-ceammc-${CEAMMC_DISTRIB_VERSION}.tar.gz")
+            "pd-ceammc-${CEAMMC_DISTRIB_VERSION}-src.tar.gz")
