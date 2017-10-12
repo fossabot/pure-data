@@ -163,16 +163,6 @@ if(WIN32)
         list(APPEND CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS ${LIBWINPTHREAD})
     endif()
 
-    # msvcr100.dll
-    find_file(MSVCR100
-        NAME msvcr100.dll
-        PATHS ${CMAKE_INSTALL_PREFIX}/bin)
-
-    if(MSVCR100)
-        message(STATUS "MinGW runtime: ${MSVCR100} found")
-        list(APPEND CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS ${MSVCR100})
-    endif()
-
     include(InstallRequiredSystemLibraries)
 
     # libportaudio-2.dll
