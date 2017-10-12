@@ -221,11 +221,11 @@ void tclscript()
 //            "wm iconname $w \"text\"\n"
 //            "positionWindow $id.w\n"
 
-            "frame $id.w.buttons\n"
+            "ttk::frame $id.w.buttons\n"
             "pack $id.w.buttons -side bottom -fill x -pady 2m\n"
 
-            "text $id.w.text -relief sunken -bd 2 -yscrollcommand \"$id.w.scroll set\" -setgrid 1 -width 80 -height 20\n"
-            "scrollbar $id.w.scroll -command \"$id.w.text yview\"\n"
+            "tk::text $id.w.text -relief sunken -bd 1 -yscrollcommand \"$id.w.scroll set\" -setgrid 1 -width 80 -height 20\n"
+            "ttk::scrollbar $id.w.scroll -command \"$id.w.text yview\"\n"
             "pack $id.w.scroll -side right -fill y\n"
             "pack $id.w.text -expand yes -fill both\n"
 
@@ -247,7 +247,7 @@ void tclscript()
             "} "
             "else { $id.w.text configure -state disabled }\n"
 
-            "button $id.w.buttons.cancel -text Cancel -command \"destroy $id.w\"\n"
+            "ttk::button $id.w.buttons.cancel -text Cancel -command \"destroy $id.w\"\n"
             "pack $id.w.buttons.cancel -side left -expand 1\n"
             "bind $id.w {<KeyPress-Escape>} \"destroy $id.w\"\n"
         "}\n")
@@ -261,7 +261,7 @@ void tclscript()
                 "wm title $id $title\n" 
                 "wm protocol $id WM_DELETE_WINDOW [concat flext_cancel $id]\n"
 
-                "frame $id.frame\n"
+                "ttk::frame $id.frame\n"
                 "set row 0\n"
 
                 // set grow parameters
@@ -274,13 +274,13 @@ void tclscript()
                 "grid rowconfigure $id.frame {0 1} -weight 0\n"
 
                 // set column labels
-                "label $id.frame.label -text {attribute} -font {Helvetica 9 bold}\n"
-                "label $id.frame.init  -text {initial value} -font {Helvetica 9 bold}\n"
-                "label $id.frame.copy  -text {copy} -font {Helvetica 9 bold}\n"
-                "label $id.frame.val   -text {current value} -font {Helvetica 9 bold}\n"
-                "label $id.frame.apply -text {} -font {Helvetica 9 bold}\n" // why must this be empty?
+                "ttk::label $id.frame.label -text {attribute}\n"
+                "ttk::label $id.frame.init  -text {initial value}\n"
+                "ttk::label $id.frame.copy  -text {copy}\n"
+                "ttk::label $id.frame.val   -text {current value}\n"
+                "ttk::label $id.frame.apply -text {}\n" // why must this be empty?
                 "foreach {i txt} {0 {don't\rsave} 1 {do\rinit} 2 {always\rsave} } {\n"
-                    "label $id.frame.b$i -text $txt -font {Helvetica 7 bold}\n"
+                    "ttk::label $id.frame.b$i -text $txt\n"
                 "}\n"
 
                 "grid config $id.frame.label -column 0 -row $row \n"
@@ -292,7 +292,7 @@ void tclscript()
                 "incr row\n"
 
                 // Separator
-                "frame $id.frame.sep -relief ridge -bd 1 -height 2\n"
+                "ttk::frame $id.frame.sep -relief ridge -borderwidth 1 -height 2\n"
                 "grid config $id.frame.sep -column 0 -columnspan 9 -row $row -pady 2 -sticky {snew}\n"
                 "incr row\n")
     );
@@ -329,7 +329,7 @@ void tclscript()
                     // add dialog elements to window
 
                     // attribute label
-                    "label $id.frame.label-$ix -text \"$an :\" -font {Helvetica 8 bold}\n"
+                    "ttk::label $id.frame.label-$ix -text \"$an :\"\n"
                     "grid config $id.frame.label-$ix -column 0 -row $row -padx 5 -sticky {e}\n")
     );
     sys_vgui(const_cast<char *>(
@@ -342,21 +342,21 @@ void tclscript()
                         // choose entry field type
                         "switch $atp {\n"
                             "0 - 1 {\n"  // int or float
-                                "entry $id.frame.init-$ix -textvariable $var_attr_init" ST_DISABLED "\n"
-                                "entry $id.frame.val-$ix -textvariable $var_attr_val\n"
+                                "ttk::entry $id.frame.init-$ix -textvariable $var_attr_init" ST_DISABLED "\n"
+                                "ttk::entry $id.frame.val-$ix -textvariable $var_attr_val\n"
                             "}\n"
                             "2 {\n"  // boolean
-                                "checkbutton $id.frame.init-$ix -variable $var_attr_init" ST_DISABLED "\n"
-                                "checkbutton $id.frame.val-$ix -variable $var_attr_val\n"
+                                "ttk::checkbutton $id.frame.init-$ix -variable $var_attr_init" ST_DISABLED "\n"
+                                "ttk::checkbutton $id.frame.val-$ix -variable $var_attr_val\n"
                             "}\n"
                             "3 {\n"  // symbol
-                                "entry $id.frame.init-$ix -textvariable $var_attr_init" ST_DISABLED "\n"
-                                "entry $id.frame.val-$ix -textvariable $var_attr_val\n"
+                                "ttk::entry $id.frame.init-$ix -textvariable $var_attr_init" ST_DISABLED "\n"
+                                "ttk::entry $id.frame.val-$ix -textvariable $var_attr_val\n"
                             "}\n"
                             "4 - 5 {\n"  // list or unknown
-                                "entry $id.frame.init-$ix -textvariable $var_attr_init" ST_DISABLED "\n"
+                                "ttk::entry $id.frame.init-$ix -textvariable $var_attr_init" ST_DISABLED "\n"
                                 "bind $id.frame.init-$ix {<Control-Button-1>} \" flext_textzoom $id.frame.init-$ix $var_attr_init { $title } $an 1\"\n"
-                                "entry $id.frame.val-$ix -textvariable $var_attr_val\n"
+                                "ttk::entry $id.frame.val-$ix -textvariable $var_attr_val\n"
                                 "bind $id.frame.val-$ix {<Control-Button-1>} \" flext_textzoom $id.frame.val-$ix $var_attr_val { $title } $an 1\"\n"
                             "}\n"
                         "}\n"
@@ -365,18 +365,18 @@ void tclscript()
                         "grid config $id.frame.val-$ix   -column 4 -row $row -padx 5 -sticky {ew}\n"
 
                         // copy buttons
-                        "button $id.frame.b2i-$ix -text {<-} -height 1 -command \" flext_copyval $var_attr_init $var_attr_val \"" ST_DISABLED "\n"
+                        "ttk::button $id.frame.b2i-$ix -text {<-} -command \" flext_copyval $var_attr_init $var_attr_val \"" ST_DISABLED "\n"
                         "grid config $id.frame.b2i-$ix  -column 2 -row $row  -sticky {ew}\n"
-                        "button $id.frame.b2c-$ix -text {->} -height 1 -command \" flext_copyval $var_attr_val $var_attr_init \"\n"
+                        "ttk::button $id.frame.b2c-$ix -text {->} -command \" flext_copyval $var_attr_val $var_attr_init \"\n"
                         "grid config $id.frame.b2c-$ix  -column 3 -row $row  -sticky {ew}\n"
 
                         // apply button
-                        "button $id.frame.apply-$ix -text {Apply} -height 1 -command \" flext_apply $id $ix \"\n"
+                        "ttk::button $id.frame.apply-$ix -text {Apply} -command \" flext_apply $id $ix \"\n"
                         "grid config $id.frame.apply-$ix -column 5 -row $row  -sticky {ew}\n"
 
                         // radiobuttons
                         "foreach {i c} {0 black 1 blue 2 red} {\n"
-                            "radiobutton $id.frame.b$i-$ix -value $i -foreground $c -variable $var_attr_save" ST_DISABLED "\n"
+                            "ttk::radiobutton $id.frame.b$i-$ix -value $i -variable $var_attr_save" ST_DISABLED "\n"
                             "grid config $id.frame.b$i-$ix -column [expr $i + 6] -row $row\n"
                         "}\n")
     );
@@ -389,24 +389,24 @@ void tclscript()
                         // choose display field type
                         "switch $atp {\n"
                             "0 - 1 {\n"  // int or float
-                                "entry $id.frame.val-$ix -textvariable $var_attr_val -state disabled\n"
+                                "ttk::entry $id.frame.val-$ix -textvariable $var_attr_val -state disabled\n"
                             "}\n"
                             "2 {\n"  // boolean
-                                "checkbutton $id.frame.val-$ix -variable $var_attr_val -state disabled\n"
+                                "ttk::checkbutton $id.frame.val-$ix -variable $var_attr_val -state disabled\n"
                             "}\n"
                             "3 {\n"  // symbol
-                                "entry $id.frame.val-$ix -textvariable $var_attr_val -state disabled\n"
+                                "ttk::entry $id.frame.val-$ix -textvariable $var_attr_val -state disabled\n"
                             "}\n"
                             "4 - 5 {\n"  // list or unknown
-                                "entry $id.frame.val-$ix -textvariable $var_attr_val -state disabled\n"
+                                "ttk::entry $id.frame.val-$ix -textvariable $var_attr_val -state disabled\n"
                                 "bind $id.frame.val-$ix {<Control-Button-1>} \" flext_textzoom $id.frame.val-$ix $var_attr_val { $title } $an 0\"\n"
                             "}\n"
                         "}\n"
 
-//                      "entry $id.fval.val-$ix -textvariable $var_attr_val -state disabled\n"
+//                      "ttk::entry $id.fval.val-$ix -textvariable $var_attr_val -state disabled\n"
                         "grid config $id.frame.val-$ix -column 4 -row $row -padx 5 -sticky {ew}\n"
 
-                        "label $id.frame.readonly-$ix -text \"read-only\"\n"
+                        "ttk::label $id.frame.readonly-$ix -text \"read-only\"\n"
                         "grid config $id.frame.readonly-$ix -column 6 -columnspan 3 -row $row -padx 5 -sticky {ew}\n"
                     "}\n"
 
@@ -417,21 +417,21 @@ void tclscript()
 
                 // empty space
                 "grid rowconfigure $id.frame $row -weight 1\n"
-                "frame $id.frame.dummy\n"
+                "ttk::frame $id.frame.dummy\n"
                 "grid config $id.frame.dummy -column 0 -columnspan 9 -row $row\n"
                 "incr row\n")
     );
     sys_vgui(const_cast<char *>(
                 // Separator
-                "frame $id.sep2 -relief ridge -bd 1 -height 2\n"
+                "ttk::frame $id.sep2 -relief ridge -borderwidth 1 -height 2\n"
 
                 // Buttons
-                "frame $id.buttonframe\n"
+                "ttk::frame $id.buttonframe\n"
 
-                "button $id.buttonframe.cancel -text {Leave} -width 20 -command \" flext_cancel $id \"\n"
-                "button $id.buttonframe.apply -text {Apply all} -width 20 -command \" flext_applyall $id $alen \"\n"
-                "button $id.buttonframe.ok -text {Apply & Leave} -width 20 -command \" flext_ok $id $alen \"\n"
-                "button $id.buttonframe.help -text {Help} -width 10 -command \" flext_help $id \"\n"
+                "ttk::button $id.buttonframe.cancel -text {Leave} -command \" flext_cancel $id \"\n"
+                "ttk::button $id.buttonframe.apply -text {Apply all} -command \" flext_applyall $id $alen \"\n"
+                "ttk::button $id.buttonframe.ok -text {Apply & Leave} -command \" flext_ok $id $alen \"\n"
+                "ttk::button $id.buttonframe.help -text {Help} -command \" flext_help $id \"\n"
 
                 "grid columnconfigure $id.buttonframe {0 1 2 3} -weight 1\n"
                 "grid config $id.buttonframe.cancel $id.buttonframe.apply $id.buttonframe.ok $id.buttonframe.help -padx 2 -sticky {snew}\n"
