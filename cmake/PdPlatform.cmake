@@ -82,7 +82,8 @@ if(WIN32)
     install_tcl_dir(dde1.4)
     install_tcl_dir(tcllib1.18)
     # try different tooltip location
-    install_tcl_dir(tk8.6/tooltip)
+    install_tcl_dir(tklib0.6)
+    install_tcl_dir(tklib0.6/tooltip)
     install_tcl_dir(tooltip)
     install_tcl_dir(reg1.3)
 
