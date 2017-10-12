@@ -9,5 +9,5 @@ set(XSAMPLE_SRC
 pd_add_extension(NAME xsample
     FILES ${XSAMPLE_SRC}
     INTERNAL True
-    LIBRARY xample
+    LIBRARY xsample
     LINK flext_static)
