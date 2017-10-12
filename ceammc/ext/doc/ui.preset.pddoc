@@ -24,7 +24,7 @@
             <par>*Click* activates preset slot, *Shift+click* saves to specified preset slot,
             *Alt+click* removes preset value;</par>
             <par>NOTE: if now UI widgets with @presetname on canvas - *Shift-click* is disabled.</par>
-            <par>Active slot is highlighted, avaivable slots are dark gray</par>
+            <par>Active slot is highlighted, available slots are dark gray</par>
         </info>
         <properties>
             <property name="@receive" type="symbol">receive source</property>

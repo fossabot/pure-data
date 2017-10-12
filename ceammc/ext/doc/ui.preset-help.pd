@@ -12,7 +12,7 @@ subpatches or abstractions are supported.;
 to specified preset slot \, *Alt+click* removes preset value;;
 #X text 210 168 NOTE: if now UI widgets with @presetname on canvas -
 *Shift-click* is disabled.;
-#X text 210 205 Active slot is highlighted \, avaivable slots are dark
+#X text 210 205 Active slot is highlighted \, available slots are dark
 gray;
 #X obj 50 266 ui.radio @size 127 15 @presetname P-radio;
 #X obj 366 266 ui.sliders @size 150 100 @presetname P-sliders;
