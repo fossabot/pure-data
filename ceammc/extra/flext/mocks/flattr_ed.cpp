@@ -67,6 +67,17 @@ static t_selectfn ori_select = NULL;
 #define ST_DISABLED " -state disabled"
 #endif
 
+#ifdef __APPLE__
+static const char * FLEXT_HELP_FONT_BIG = "Helvetica 14 bold";
+static const char * FLEXT_HELP_FONT_NORMAL = "Helvetica 12";
+#elif __WIN32
+static const char * FLEXT_HELP_FONT_BIG = "Verdana 11 bold";
+static const char * FLEXT_HELP_FONT_NORMAL = "Verdana 10";
+#else
+static const char * FLEXT_HELP_FONT_BIG = "Sans 12 bold";
+static const char * FLEXT_HELP_FONT_NORMAL = "Sans 10";
+#endif
+
 
 #ifndef FLEXT_NOATTREDIT
 
@@ -157,33 +168,34 @@ void tclscript()
             "flext_cancel $id\n"
         "}\n")
     );
-    sys_vgui(const_cast<char *>(
-        "proc flext_help {id} {\n"
+    sys_vgui("proc flext_help {id} {\n"
             "toplevel $id.hw\n"
             "wm title $id.hw \"Flext attribute editor help\"\n"
 
-            "frame $id.hw.buttons\n"
-            "pack $id.hw.buttons -side bottom -fill x -pady 2m\n"
+            "ttk::frame $id.hw.top_frame\n"
+            "pack $id.hw.top_frame -fill y\n"
+            "ttk::frame $id.hw.top_frame.buttons\n"
+            "pack $id.hw.top_frame.buttons -side bottom -fill x -pady 2m\n"
 
-            "text $id.hw.text -relief sunken -bd 2 -yscrollcommand \"$id.hw.scroll set\" -setgrid 1 -width 80 -height 10 -wrap word\n"
-            "scrollbar $id.hw.scroll -command \"$id.hw.text yview\"\n"
-            "pack $id.hw.scroll -side right -fill y\n"
-            "pack $id.hw.text -expand yes -fill both\n"
+            "tk::text $id.hw.top_frame.text -relief sunken -bd 1 -yscrollcommand \"$id.hw.top_frame.scroll set\" -setgrid 1 -width 80 -height 10 -wrap word\n"
+            "ttk::scrollbar $id.hw.top_frame.scroll -command \"$id.hw.top_frame.text yview\"\n"
+            "pack $id.hw.top_frame.scroll -side right -fill y\n"
+            "pack $id.hw.top_frame.text -expand yes -fill both\n"
 
-            "button $id.hw.buttons.ok -text OK -command \"destroy $id.hw\"\n"
-            "pack $id.hw.buttons.ok -side left -expand 1\n"
+            "ttk::button $id.hw.top_frame.buttons.ok -text OK -command \"destroy $id.hw\"\n"
+            "pack $id.hw.top_frame.buttons.ok -side left -expand 1\n"
             "bind $id.hw {<KeyPress-Escape>} \"destroy $id.hw\"\n"
 
-            "$id.hw.text tag configure big -font {Arial 10 bold}\n"
-            "$id.hw.text configure -font {Arial 8 bold}\n"
-            "$id.hw.text insert end \""
+            "$id.hw.top_frame.text tag configure big -font { %s }\n"
+            "$id.hw.top_frame.text configure -font { %s }\n"
+            "$id.hw.top_frame.text insert end \""
                 "The flext attribute editor lets you query or change attribute values exposed by an external object. \" big \"\n\n"
                 "Local variable names ($-values) will only be saved as such for init values. "
                 "Alternatively, # can be used instead of $.\n"
                 "Ctrl-Button on a text field will open an editor window where text can be entered more comfortably.\n"
             "\"\n"
-            "$id.hw.text configure -state disabled\n"
-        "}\n")
+            "$id.hw.top_frame.text configure -state disabled\n"
+        "}\n", FLEXT_HELP_FONT_BIG, FLEXT_HELP_FONT_NORMAL
     );
     sys_vgui(const_cast<char *>(
         "proc flext_copyval {dst src} {\n"
