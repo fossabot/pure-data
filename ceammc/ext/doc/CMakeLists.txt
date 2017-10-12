@@ -95,4 +95,6 @@ endif()
 file(GLOB _PDDOC_FILES "*.pddoc")
 file(GLOB _PDDOC_XML_FILES "*.xml")
 add_custom_target(pddoc_files SOURCES ${_PDDOC_FILES} ${_PDDOC_XML_FILES} ceammc.db ls_missing_doc.py)
+file(GLOB _PDDOC_PD_FILES "*.pd")
+add_custom_target(pddoc_pd_files SOURCES ${_PDDOC_PD_FILES})
 
