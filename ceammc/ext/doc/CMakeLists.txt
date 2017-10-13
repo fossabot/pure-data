@@ -1,6 +1,7 @@
 # generating about info page
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/about.pd ${CMAKE_CURRENT_BINARY_DIR}/about.pd @ONLY)
 if(EXISTS "${CMAKE_SOURCE_DIR}/.git")
+    find_program(_GIT git)
     message(STATUS "Build from source git")
 else()
     message(STATUS "Build from source tarball")
@@ -84,7 +85,7 @@ endif()
 
     # ui.preset example install
     # NOTE: should do this by regexp?
-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/prs.txt" DESTINATION ${DOC_INSTALL_PATH}
+    install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/prs.txt" DESTINATION ${DOC_INSTALL_PATH}
         PERMISSIONS OWNER_READ GROUP_READ WORLD_READ)
 
     install(
