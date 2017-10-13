@@ -106,10 +106,20 @@ do
     $DYLIBBUNDLER -x $PD_EXTRA/ceammc/$(basename $f) -b -cd -d $PD_EXTRA/ceammc -p @loader_path/ -of
 done
 
+function dylib_external_fix() {
+    exec=$1
+    dir=$2
+
+    $DYLIBBUNDLER -x "$exec" -b -cd -d "$dir" -p @loader_path/ -of
+}
+
 echo "Copying Additional extra:"
 cp $BUILD_DIR/ceammc/extra/comport/system.serial.d_fat $PD_EXTRA/ceammc
 cp $BUILD_DIR/ceammc/extra/hcs/*.d_fat $PD_EXTRA/ceammc
 cp $SRC_DIR/ceammc/extra/hcs/*.tcl $PD_EXTRA/ceammc
+dylib_external_fix $PD_EXTRA/ceammc/system.serial.d_fat $PD_EXTRA/ceammc
+dylib_external_fix $PD_EXTRA/ceammc/system.cursor.d_fat $PD_EXTRA/ceammc
+dylib_external_fix $PD_EXTRA/ceammc/system.colorpanel.d_fat $PD_EXTRA/ceammc
 
 echo "Copying zconf..."
 mkdir -p $PD_EXTRA/zconf
@@ -174,6 +184,7 @@ echo "Copying SoundTouch external..."
 mkdir $PD_EXTRA/soundtouch
 cp $BUILD_DIR/ceammc/extra/SoundTouch/pd/*.d_fat $PD_EXTRA/soundtouch
 cp $SRC_DIR/ceammc/extra/SoundTouch/pd/*-help.pd $PD_EXTRA/soundtouch
+dylib_external_fix $PD_EXTRA/soundtouch/soundtouch~.d_fat $PD_EXTRA/soundtouch
 
 echo "Copying autotune external..."
 mkdir $PD_EXTRA/autotune
