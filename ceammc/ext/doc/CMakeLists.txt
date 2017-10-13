@@ -1,11 +1,33 @@
-# generating about info page
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/about.pd ${CMAKE_CURRENT_BINARY_DIR}/about.pd @ONLY)
+# get commmit information
+set(GIT_BRANCH "master")
+set(GIT_COMMIT "")
+string(TIMESTAMP BUILD_DATETIME "%d %m %Y UTC %H:%M:%S " UTC)
 if(EXISTS "${CMAKE_SOURCE_DIR}/.git")
     find_program(_GIT git)
-    message(STATUS "Build from source git")
+    if(_GIT)
+        execute_process(
+            COMMAND ${_GIT} symbolic-ref --short HEAD
+            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+            OUTPUT_VARIABLE GIT_BRANCH
+            OUTPUT_STRIP_TRAILING_WHITESPACE)
+        execute_process(
+            COMMAND ${_GIT} describe --tags
+            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+            OUTPUT_VARIABLE GIT_COMMIT
+            OUTPUT_STRIP_TRAILING_WHITESPACE)
+    endif()
+
+    message(STATUS "Build from source git:
+        branch: ${GIT_BRANCH}
+        commit: ${GIT_COMMIT}
+        date:   ${BUILD_DATETIME}")
 else()
-    message(STATUS "Build from source tarball")
+    message(STATUS "Build from source tarball
+        date:   ${BUILD_DATETIME}")
 endif()
+
+# generating about info page
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/about.pd ${CMAKE_CURRENT_BINARY_DIR}/about.pd @ONLY)
 
 # doc file list
 include(docs.cmake)
@@ -83,7 +105,7 @@ endif()
     install(FILES "index-help.pd" DESTINATION "${DOC_INSTALL_PATH}/.."
         PERMISSIONS OWNER_READ GROUP_READ WORLD_READ)
 
-    # ui.preset example install
+    # ui.preset example prs.txt install
     # NOTE: should do this by regexp?
     install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/prs.txt" DESTINATION ${DOC_INSTALL_PATH}
         PERMISSIONS OWNER_READ GROUP_READ WORLD_READ)
