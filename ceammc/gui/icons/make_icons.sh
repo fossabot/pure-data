@@ -3,6 +3,8 @@
 INK='@INKSCAPE@'
 ICONSET='@CMAKE_CURRENT_SOURCE_DIR@/pd_ceammc.iconset'
 ICONSET_WIN='@CMAKE_CURRENT_SOURCE_DIR@/pd_ceammc_win.iconset'
+DOC_ICONSET='@CMAKE_CURRENT_SOURCE_DIR@/pd_doc.iconset'
+MAC_DOC_ICON_TEMPLATE='/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/GenericDocumentIcon.icns'
 
 if [ -z "$1" ]
 then
@@ -49,8 +51,22 @@ if [ -e "@ICONUTIL@" ]
 then
     echo "Making ICNS..."
     @ICONUTIL@ -c icns "${ICONSET}"
-fi
 
+    if [ -f ${MAC_DOC_ICON_TEMPLATE} ]; then
+        echo "Generating MacOSX doc iconset..."
+        @ICONUTIL@ -c iconset ${MAC_DOC_ICON_TEMPLATE} -o ${DOC_ICONSET}
+        cd ${DOC_ICONSET}
+        for i in *.png
+        do
+            echo "generating doc icon: $i"
+            overlay="${ICONSET}/$(basename $i)"
+            convert $i \( ${overlay} -resize 50% \) -gravity center -geometry +0+0 -composite ${i}
+        done
+        cd ..
+
+        @ICONUTIL@ -c icns ${DOC_ICONSET}
+    fi
+fi
 
 if [ -e "@MAGICK_CONVERT@" ]
 then
@@ -60,4 +76,7 @@ then
 
     PNGS=$(find "${ICONSET_WIN}" -name '*.png')
     @MAGICK_CONVERT@ ${PNGS} pd_ceammc_win.ico
+
+    PNGS=$(find "${DOC_ICONSET}" -name '*.png')
+    @MAGICK_CONVERT@ ${PNGS} pd_doc_win.ico
 fi
