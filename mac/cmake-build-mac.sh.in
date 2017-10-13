@@ -13,7 +13,7 @@ PD_TCL=$PD_RESOURCES/tcl
 
 PD_INFO="$BUILD_DIR/dist/Info.plist"
 PD_ICON="$SRC_DIR/ceammc/gui/icons/pd_ceammc.icns"
-PD_ICON_FILE="$SRC_DIR/mac/stuff/pd-file.icns"
+PD_ICON_FILE="$SRC_DIR/ceammc/gui/icons/pd_doc.icns"
 WISH_APP="${WISH_APP}"
 TK_PATH="${TK_PATH}"
 TCL_PATH="${TCL_PATH}"
