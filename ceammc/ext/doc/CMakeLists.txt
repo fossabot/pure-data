@@ -1,4 +1,12 @@
+# generating about info page
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/about.pd ${CMAKE_CURRENT_BINARY_DIR}/about.pd @ONLY)
+if(EXISTS "${CMAKE_SOURCE_DIR}/.git")
+    message(STATUS "Build from source git")
+else()
+    message(STATUS "Build from source tarball")
+endif()
+
+# doc file list
 include(docs.cmake)
 
 if(NOT PD_LIB2PD)
@@ -59,16 +67,24 @@ else()
     set(DOC_INSTALL_PATH "${PD_DOC_INSTALL_PATH}/extra/ceammc")
 endif()
 
+    # install all help files
     foreach(_doc_file ${DOC_FILES})
         install(FILES "${_doc_file}-help.pd"
             DESTINATION ${DOC_INSTALL_PATH}
             PERMISSIONS OWNER_READ GROUP_READ WORLD_READ)
     endforeach()
 
+    # About Pd page
     install(FILES "${CMAKE_CURRENT_BINARY_DIR}/about.pd" DESTINATION ${DOC_INSTALL_PATH}
         PERMISSIONS OWNER_READ GROUP_READ WORLD_READ)
 
+    # Documentation index install
     install(FILES "index-help.pd" DESTINATION "${DOC_INSTALL_PATH}/.."
+        PERMISSIONS OWNER_READ GROUP_READ WORLD_READ)
+
+    # ui.preset example install
+    # NOTE: should do this by regexp?
+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/prs.txt" DESTINATION ${DOC_INSTALL_PATH}
         PERMISSIONS OWNER_READ GROUP_READ WORLD_READ)
 
     install(
