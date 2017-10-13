@@ -233,6 +233,8 @@ mkdir -p Frameworks
 mkdir -p $LIBDIR
 
 $DYLIBBUNDLER -x $EXECFILE -b -cd -d $LIBDIR -p $NEWLIBPATH -of
+$DYLIBBUNDLER -x "Resources/bin/pdsend" -b -cd -d $LIBDIR -p $NEWLIBPATH -of
+$DYLIBBUNDLER -x "Resources/bin/pdreceive" -b -cd -d $LIBDIR -p $NEWLIBPATH -of
 
 #copy Tcl${TK_VERSION}
 if [ $IS_SYSTEM_TK -eq 0 ]
